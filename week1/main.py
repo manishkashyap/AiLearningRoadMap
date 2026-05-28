@@ -1,15 +1,28 @@
 from fastapi import FastAPI
-from TextToJsonExtractor import TextToJsonExtractor
+from pydantic import BaseModel, Field
+
+try:
+    from .LeadExtractionApplication import LeadExtractionApplication
+except ImportError:
+    from LeadExtractionApplication import LeadExtractionApplication
+
+
+class LeadExtractionRequest(BaseModel):
+    raw_lead_text: str = Field(min_length=1)
+
 
 app = FastAPI()
-extractor = TextToJsonExtractor()
+lead_extraction_application = LeadExtractionApplication()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 
-@app.get("/lead/extract")
-def read_item(q: str | None = None):
-    return extractor.extract(q)
+@app.post("/lead/extract")
+def extract_lead(request: LeadExtractionRequest):
+    result = lead_extraction_application.extract_structured_data(
+        request.raw_lead_text,
+    )
+    return result.model_dump()
