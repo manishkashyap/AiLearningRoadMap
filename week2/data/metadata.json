@@ -1,0 +1,1277 @@
+[
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 1 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How AI Thinks A plain-language, first-principles guide to how Large Language Models (LLMs) learn, reason, and create. © 2026 Raahul Seshadri. All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means—electronic, mechanical, photocopying, recording, or other- wise—without prior written permission from the author, except for brief quotations in reviews or academic work. This book is intended for educational purposes only. Examples, explanations, and descriptions are simplified for clarity and do not represent proprietary or confidential information from any institution or employer. First Edition, 2026"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 1 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "information from any institution or employer. First Edition, 2026"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 3 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Preface The best way to have control over something is to understand it. AI has disrupted several industries, and speculations of both its positive and negative effects flood the internet every day. It’s hard to know what is really a prediction versus merely a speculation from someone with a vested interest. In short, while AI has progressed rapidly, the general public has not been able to keep pace with the internals of how it works. And as a consequence, people have to rely on sensational opinions rather than observing the facts for themselves. This book changes that. It allows people to: 1. Understand the principles on which LLMs work, without all the math. 2. Learn both the advantages and limitations"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 3 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "facts for themselves. This book changes that. It allows people to: 1. Understand the principles on which LLMs work, without all the math. 2. Learn both the advantages and limitations of LLMs. 3. Know exactly what happens when an LLM runs, reasons, creates, so that they don’t mistake what’s happening for something else. 4. Protect themselves from speculations and false information about AI. And come to their own conclusions. 5. Dive deeper into the highly technical details of LLMs if they choose, using this book as a high-level map. 6. Use LLMs more effectively because of a deeper understanding of it. This book is for software engineers, product managers, content marketers, CEOs, CTOs, accountants, salespeople, and just about everyone else."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 3 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Use LLMs more effectively because of a deeper understanding of it. This book is for software engineers, product managers, content marketers, CEOs, CTOs, accountants, salespeople, and just about everyone else. The aim is to improve everyone’s general knowledge about AI. About Me I’m Raahul, and I specialize in designing and architecting complex AI systems. As of 2025, I lead AI for a major SaaS product, setting the vision, inventing frameworks, and packaging them into a wonderful product experience."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 4 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Preface ii I’ve been programming since the age of 11 (almost 25 years as of 2025). I’m an undergrad- uate in Electronics & Telecommunications Engineering, and have a Master’s in Computer Science from GeorgiaTech, specializing in Machine Learning. I love learning from first princi- ples rather than memorizing or speculating. Over the years, I’ve architected complex high-scale systems, led big teams, designed differentiators, and have seen how business & technology intertwine behind closed room meetings with prominent leaders. In writing this book, I’ve tried to combine the knowledge of AI, with my approach of thinking from first principles, and put them in the context of the business of technology so that what I cover is both clear and useful. The"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 4 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "with my approach of thinking from first principles, and put them in the context of the business of technology so that what I cover is both clear and useful. The Goals of this Book This book is not a technical paper. The point is not infinite precision. The objective is to communicate the broad strokes of AI so that anyone not directly working in the field can still greatly benefit from it. It’s not always easy to communicate a highly technical topic accurately to people not already working in the field, while not losing any of the important precision. But it is possible, and I’ve tried my best. Everything that I’ve written in this book is something I think almost"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 4 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "field, while not losing any of the important precision. But it is possible, and I’ve tried my best. Everything that I’ve written in this book is something I think almost everyone should know about. But in doing so, I’ve taken liberties at places where technical depth was not warranted for our purposes. Many of the points in this book are controversial. Even an LLM would “argue“ that certain points are inaccurate yet would change its “mind” the moment I counter it. However, I’ve tried to include as many supporting facts as possible, so that you can make up your own mind. By the end of this book, you would have a thorough understanding of how LLMs operate, and how concepts"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 4 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "as possible, so that you can make up your own mind. By the end of this book, you would have a thorough understanding of how LLMs operate, and how concepts like reasoning really work. You would be able to leverage AI better. And you’d also be more in control of your future in this AI-era. How the Book is Structured The book is strictly meant to be read in sequence. Latter chapters rely on concepts intro- duced in the earlier ones. If you directly jump to a later chapter, then there’s a chance that you might misunderstand what’s being communicated. The chapters themselves are structured as: 1. In the first chapter, we cover the basic terms used in machine learning"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 4 :: 360",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "there’s a chance that you might misunderstand what’s being communicated. The chapters themselves are structured as: 1. In the first chapter, we cover the basic terms used in machine learning and AI. A disagreement over what these words mean fuels most of the debates seen online."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 5 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Preface iii 2. The second chapter introduces the principle on which LLMs work. It’s like a crash course that covers the basics very rapidly and concisely. 3. The third chapter goes into the differences between tokens and words. 4. The fourth chapter details out how LLMs are trained. This is the first larger chapter because it ties a lot of ideas to ones learned in the previous chapters. 5. The fifth chapter talks about why LLMs generate a different response each time. This is very important to understand before we dive into creativity and hallucination. 6. The sixth chapter explores creativity and hallucination, and how they’re two sides of the same coin. 7. The seventh and final chapter concludes with"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 5 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "dive into creativity and hallucination. 6. The sixth chapter explores creativity and hallucination, and how they’re two sides of the same coin. 7. The seventh and final chapter concludes with how reasoning works in LLMs. This chapter draws on everything learned before it to make its point very concisely. How to Read this Book You can read this book from start to finish quickly first, and then do a second pass for more details. Important details from previous chapters are repeated in the subsequent ones so that you don’t have to jump around the book. With that, let’s begin!"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 5 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "to jump around the book. With that, let’s begin!"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 6 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "This page is intentionally left blank."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 7 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Contents Preface ����������������������������������������������������������������������������������������������������������������������������������������������������������i Cutting Through the AI Jargon ��������������������������������������������������������������������������������������������������������������1 A Crash Course on How LLMs Work ����������������������������������������������������������������������������������������������������7 The Word is a Lie��������������������������������������������������������������������������������������������������������������������������������������13 How LLMs are Trained ���������������������������������������������������������������������������������������������������������������������������18 Why LLMs Don’t Give the Same Answer Twice �������������������������������������������������������������������������������31 The Two Sides: Creativity & Hallucination ������������������������������������������������������������������������������������46 How Reasoning Works in LLMs ����������������������������������������������������������������������������������������������������������62 Conclusion �����������������������������������������������������������������������������������������������������������������������������������������������72"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 8 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "This page is intentionally left blank."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 9 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 1 Cutting Through the AI Jargon “Define your terms, you will permit me again to say, or we shall never understand one another.” — Voltaire (translated) Terms around AI, like reasoning or thinking, are used loosely by the mainstream media and startups. This leads to heated debates around how conscious AI really is, or what kind of jobs it’s coming for next. Instead of choosing the route of debate, we’ll choose that of understanding. However, before we can talk about what AI can or cannot do, we must first agree on the definitions of words like intelligence, learning, and a few others. We’ll also focus solely on large language models (LLMs) rather than the much broader field of AI."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 9 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "agree on the definitions of words like intelligence, learning, and a few others. We’ll also focus solely on large language models (LLMs) rather than the much broader field of AI. Fundamental Concepts Before jumping into LLMs, you’ll benefit from understanding some of the fundamental terms generally used within AI and its subfield of machine learning. These words are the key to why people often exaggerate the claims around AI or fail to understand its true impact. Learn Learn is the most misunderstood word in AI. It doesn’t quite mean what people often think. In computers, to learn means to find patterns, not to understand concepts."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 9 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "people often think. In computers, to learn means to find patterns, not to understand concepts."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 10 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Cutting Through the AI Jargon 2 For example, when you read the word table, you might picture a table in your head. You instantly know how it’s used, what type of things you’d keep on it, and probably what kind of chair you’d want with it. In short, people read to understand and infer meaning. We don’t merely infer patterns. For us, patterns are only as useful as they are meaningful. An AI algorithm, however, primarily learns patterns. When it looks at words like dog or cat, it merely notices the typical words that surround them. That’s how it knows that dogs and cats are related, because these words appear in similar contexts. (Illustrated below) Dogs are very cute animals."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 10 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the typical words that surround them. That’s how it knows that dogs and cats are related, because these words appear in similar contexts. (Illustrated below) Dogs are very cute animals. So are cats. You just need to feed them well and take good care of them. AI is like using tricks to memorize a subject to pass a university exam, without any deep understanding of the ideas being taught. Thus, when you see the word learn used in the context of AI, you read it as pattern recognition rather than true understanding. This is precisely also the reason why LLMs need large amount of data to “understand” a single word, whereas people don’t. Artificial Intelligence Peter Norvig, one of AI’s"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 10 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "true understanding. This is precisely also the reason why LLMs need large amount of data to “understand” a single word, whereas people don’t. Artificial Intelligence Peter Norvig, one of AI’s leading thinkers, defines AI as any system that acts rationally in a specific environment. It’s important to realize that the emphasis is on: 1. Actions: We’re not talking about how AI achieves its action; just that it acts in a manner that we can call intelligent. 2. Environment: Keeping the debates about Artificial General Intelligence (AGI) aside, we confine actions to be in a specific environment. That same software might not act intelligently in a slightly different environment."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 10 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "to be in a specific environment. That same software might not act intelligently in a slightly different environment."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 11 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Cutting Through the AI Jargon 3 It’s that definition why even simple games of the 80s had AI opponents, despite being primitive. Our definition sees the action of AI as being analogical to humans, rather than the internal thought processes. In short, if it floats like a duck, swims like a duck, and quacks like a duck, then it’s a duck in that particular environment—even if it’s not really a duck. For example, a spam filter that correctly separates junk mail from real messages is intelli- gent in the environment of an email inbox. Its world is narrow, and its actions are limited. But within that, it is as intelligent as it can correctly classify messages. Thus, the definition of"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 11 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "of an email inbox. Its world is narrow, and its actions are limited. But within that, it is as intelligent as it can correctly classify messages. Thus, the definition of intelligence for machines is not quite the same as that for humans. Our definition of machine intelligence is about acting rationally in a specific environment; not mirroring human thoughts exactly. Machine Learning (ML) Machine learning is the method by which systems learn patterns from data rather than being explicitly programmed. Thus, ML systems generalize patterns from data automati- cally. Machine learning is a sub-field of AI. While ML focuses on pattern-recognition, AI broadly focuses on making decisions and acting effectively given those patterns. Here’s a quick example of how ML"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 11 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "learning is a sub-field of AI. While ML focuses on pattern-recognition, AI broadly focuses on making decisions and acting effectively given those patterns. Here’s a quick example of how ML looks. Consider a table as follows: x (input) y (output) 1 4 2 8 3 12 An ML model takes all input-output pairs from the training data above and learns the rela- tionship between them. In this particular case, the relationship is y = 4x. That relationship is the trained model. Now, whenever you give it a new input that was not in the training data, it predicts the output. For example, for an input of 7, the model will output 28 (y = 4x = 4*7 = 28). Now,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 11 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "was not in the training data, it predicts the output. For example, for an input of 7, the model will output 28 (y = 4x = 4*7 = 28). Now, this kind of learning might appear wasteful for simple equations. But for messy, real- world problems (like recognizing faces or detecting spam), the rules are too complex to write by hand. Machine learning finds those rules by generalizing from examples auto- matically. Remember: ML is about generalization, not memorization. And it generalizes by inferring patterns."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 12 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Cutting Through the AI Jargon 4 Machine Learning Models A model is the result of training. You can now give new inputs to the model to have it predict the corresponding outputs. Terms like linear regression, decision trees, or neural networks refer to specific ways of imple- menting machine learning. They are merely different ways of finding patterns in data. LLMs are also one such kind of model. Deep Learning Deep learning simply refers to training neural networks with many layers (hence deep) so that they can capture more abstract patterns. More layers allow model architectures that can capture more abstract patterns (shown below). But it also then needs more computing power and data. That’s why deep learning became practical"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 12 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "patterns. More layers allow model architectures that can capture more abstract patterns (shown below). But it also then needs more computing power and data. That’s why deep learning became practical only once GPUs were powerful enough to train models with millions or even billions of parameters. Lower-level features learnt by initial layers Which translates eventually to higher-level features as seen by the deeper layers LLM-Related Concepts Now that we’re clear on the foundational concepts, let’s dive into terms specifically used in the world of LLMs. These definitions are not meant to be technically precise, but work - able enough for our purposes."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 12 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "to be technically precise, but work - able enough for our purposes."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 13 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Cutting Through the AI Jargon 5 Foundation Models A foundation model is trained on vast, general-purpose data so it can later be adapted to specific tasks like writing code, summarizing text, or generating SQL queries. Think of GPT-5 as the foundation; ChatGPT is the product experience built on top of it using specialized versions of such foundation models. It’s important to note that the term is foundation and not foundational. Stanford researchers introduced the term foundation model in 2021 to emphasize the idea of building upon a common base. T oken LLMs process tokens, which are chunks of text that may be whole words or just parts of words. For instance, “happiness” might split into “happi” + “ness.” Tokenization, which"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 13 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "oken LLMs process tokens, which are chunks of text that may be whole words or just parts of words. For instance, “happiness” might split into “happi” + “ness.” Tokenization, which is the process of converting input text into tokens, helps keep vocab- ulary size manageable and allows the model to handle rare or invented words gracefully. In this book, we will use the terms tokens and words interchangeably for simplicity. Auto-Regressive Models Auto-regressive models generate text one token at a time, feeding each newly generated token back as input to predict the next. This is why you see applications like ChatGPT appearing to type out their responses instead of generating the output text all at once. The quick brown The"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 13 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "predict the next. This is why you see applications like ChatGPT appearing to type out their responses instead of generating the output text all at once. The quick brown The quick brown fox The quick brown fox jumps CONTEXT NEW TOKEN 1] CONTEXT NEW TOKEN 2] 3] CONTEXT NEW TOKEN Transformers Transformers are a neural-network model architecture designed to process sequences, like text, using a mechanism called attention. Attention allows the models to learn rich representations, support longer contexts, and many other benefits of a technical nature. Attention refers to the fact that the model can weigh which prior tokens matter the most in predicting the next one."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 13 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the fact that the model can weigh which prior tokens matter the most in predicting the next one."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 14 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Cutting Through the AI Jargon 6 Large language models have many uses. They can write SQL and even Python. Note how when processing “They”, the attention mechanism realizes that it refers to “Large language models.” Diffusion Models Diffusion models are used primarily for generating images. They start from random noise and gradually refine it into a meaningful image. In this book, we will only talk about auto-regressive models and not diffusion models. GPT (Generative Pre- Trained Transformer) A trained auto-regressive model can be referred to as a GPT. It’s the architecture used by most modern language models. Generative means it can create new data (like text). Pre-trained means it has already absorbed broad language knowledge before fine-tuning for specific tasks."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 14 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "architecture used by most modern language models. Generative means it can create new data (like text). Pre-trained means it has already absorbed broad language knowledge before fine-tuning for specific tasks. And Transformer is the architecture underneath that makes it all work. Summary 1. Learning in the context of AI is primarily about patterns and not concep- tual understanding. 2. AI is about acting intelligently within a specific environment. 3. Machine Learning is how systems generalize patterns from data. 4. Foundation Models are the general bases, trained on vast amounts of data, from which specialized AI systems are built. 5. The Transformer architecture powers modern LLMs. Tokens are the units of text that they operate on."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 14 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "data, from which specialized AI systems are built. 5. The Transformer architecture powers modern LLMs. Tokens are the units of text that they operate on."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 15 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 2 A Crash Course on How LLMs Work “He who loves practice without theory is like the sailor who boards ship without a rudder and compass and never knows where he may cast.” – Leonardo da Vinci In this chapter, you’ll learn the basic principle on which LLMs operate; ones that allow them to answer questions, write emails, or even SQL code. Knowing this will clarify the strengths and limitations of LLMs instead of you having to rely on arbitrary opinions. The Scope LLMs have many technical aspects, like the model architecture and the intricacies of the training process. We won’t dive into those mathematical and technical details in our anal- ysis. Instead, we will focus on the basic"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 15 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the model architecture and the intricacies of the training process. We won’t dive into those mathematical and technical details in our anal- ysis. Instead, we will focus on the basic principle on which LLMs operate. We’ll further see how this surprisingly naïve-looking principle manages to work magically in the real-world. Also, note that we’ll focus only on text-generation LLMs. When you use ChatGPT or Claude or Gemini and ask them questions, text is what you’re primarily dealing with. Image generation models, however, work on a different set of principles. Whatever you read is only applicable to LLMs for text generation and not necessarily image models. Finally, although we use English as the language in all our examples, most LLMs are"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 15 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "you read is only applicable to LLMs for text generation and not necessarily image models. Finally, although we use English as the language in all our examples, most LLMs are multi-lingual and support a variety of languages. However, the fundamental principle of operation remains the same."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 16 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "A Crash Course on How LLMs Work 8 The Magical Basic Principle You learned about auto-regressive models in the first chapter. They primarily work by learning to predict the next word (or token, about which we’ll learn in the next chapter). And they do this one word at a time as follows: The quick brown The quick brown fox The quick brown fox jumps CONTEXT NEW TOKEN 1] CONTEXT NEW TOKEN 2] 3] CONTEXT NEW TOKEN Each time the model predicts a new word, the size of the context increases, and this increased context is then used to predict the next word, and so on. In short, the objective of the model is to complete texts (sentences, paragraphs, or anything"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 16 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and this increased context is then used to predict the next word, and so on. In short, the objective of the model is to complete texts (sentences, paragraphs, or anything else) with syntactic and semantic coherence. That’s it. For example, imagine playing a game with several people, which plays out as follows: 1. You start with the phrase: “The world” 2. The next person chooses a word to follow it. Now the phrase becomes “The world is” 3. Now, another person chooses another word, and we get “The world is round” 4. The final person chooses a “.” (period). You’re left with the final sentence: “The world is round. ” Everything magical that LLMs do—be it writing emails, producing programs,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 16 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "round” 4. The final person chooses a “.” (period). You’re left with the final sentence: “The world is round. ” Everything magical that LLMs do—be it writing emails, producing programs, or solving logical puzzles—relies on this basic principle. It’s hard to believe that merely predicting the next word could lead to the magic that we call AI, but that’s exactly what it is. Next, let’s look at how we use this principle to make LLMs do specific tasks."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 17 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "A Crash Course on How LLMs Work 9 Setting up LLMs for Specific Tasks The next question is, how do we exploit this predict-the-next-word behavior to get LLMs to perform real-world tasks? Consider the task of writing emails. We can trick the LLM into drafting one, while it is still just predicting the next word. We do that by priming the LLM cleverly with context that has both the instructions and the beginning of the email. The LLM then auto-completes the rest of the email as follows: PREDICTED CONTEXT I’m writing an email announcing the launch of a new product. It would be professional, concise, yet hard-hitting. Here’s the email: Hello, Today I’m excited to announce the launch of our"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 17 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "writing an email announcing the launch of a new product. It would be professional, concise, yet hard-hitting. Here’s the email: Hello, Today I’m excited to announce the launch of our newest product — built to deliver faster performance, greater reliability, and a dramatically improved experience. This release represents months of re/f_inement, customer feedback, and rigorous testing. With it, you’ll gain: ... Here’s what we did: 1. We provided a context to begin with, which we then ask the LLM to complete. The context cleverly guides the LLM’s text generation. 2. The context doesn’t just start with an email, but some text that describes what we’re trying to achieve. This is a trick to provide instructions to the LLM on how"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 17 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The context doesn’t just start with an email, but some text that describes what we’re trying to achieve. This is a trick to provide instructions to the LLM on how and what the email content should be like. 3. Finally, we also start some bits of the email. This is not strictly necessary, but it ensures that whatever the LLM generates next would be the rest of the email. And that email will conform to whatever instructions we started with. 4. Given the context above, the LLM then keeps generating words. And hope- fully, we’d have a coherent piece of text that represents an email. Thus, the context molds the LLM’s predict-the-next-word behavior and helps us get LLMs to perform"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 17 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "words. And hope- fully, we’d have a coherent piece of text that represents an email. Thus, the context molds the LLM’s predict-the-next-word behavior and helps us get LLMs to perform specific tasks. This is despite the underlying operating principle being simple (and often naïve)."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 18 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "A Crash Course on How LLMs Work 10 Setting up a Coding Task Let’s also look at setting up an LLM to do a coding task. This will reinforce the importance of the context in getting LLMs to do the right thing. In most blog posts online, explanations are usually followed by code examples. Thus the LLM has seen the pattern of text followed with code before. We leverage this to cleverly craft a context as follows that we then ask the LLM to auto-complete: CONTEXT PREDICTED The following code implements bubble sort in Python in a very simple fashion. Here it is: Note that the LLM follows it with some text and then code (which is a representative example)."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 18 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "implements bubble sort in Python in a very simple fashion. Here it is: Note that the LLM follows it with some text and then code (which is a representative example). It might also add some explanations after the code, as is often seen in real-world usage. You can now start seeing a pattern here. The problems that LLMs primarily solve are set up such that a predict-the-next-word approach works to solve it. How LLMs Know When to Stop If LLMs keep predicting the next word, they’ll never stop. How is it that after a point, the LLM decides that it has answered the question, or has finished writing the code? There is a special indicator (think of it as a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 18 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "it that after a point, the LLM decides that it has answered the question, or has finished writing the code? There is a special indicator (think of it as a special word) called the End of Sequence (EOS) indicator. When the LLM itself predicts EOS as the next word, we stop generating new words from the LLM and assume that whatever has been written so far is complete. (There can be multiple such special tokens used by LLMs.) For example, to respond with just one single sentence, the LLM would have to output: “The world is round.<EOS>” . As the end-users, we never see the EOS, but just everything before it."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 18 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "have to output: “The world is round.<EOS>” . As the end-users, we never see the EOS, but just everything before it."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 19 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "A Crash Course on How LLMs Work 11 LLMs in the Real World When using real-world LLMs like ChatGPT, you do not give them texts to auto-complete. Instead, you ask questions and receive precise answers. This happens because such LLMs are further instruction-tuned, which means further trained on specialized datasets where both the questions and answers are provided to the LLM. Let’s first consider what would happen without instruction tuning: the LLM might just complete the question itself with more details, instead of actually furnishing an answer. And that’s not what we want. However, if we do instruction-tune the LLM, then the LLM learns that questions or requests are often followed by answers, and thus learns to respond to questions."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 19 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "what we want. However, if we do instruction-tune the LLM, then the LLM learns that questions or requests are often followed by answers, and thus learns to respond to questions. It is still predicting the next words, but the pattern of that prediction changes. This is not very important to dive deeper into at this time. You just have to understand that the predict-the-next-word concept is still very much in action. And just because an LLM gives you smarter answers with each new version doesn’t necessarily change the basic principle on which it operates. Why Context is Important With whatever we’ve learned so far, you’d now appreciate why contexts are so important with LLMs. Both the length of the context,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 19 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "on which it operates. Why Context is Important With whatever we’ve learned so far, you’d now appreciate why contexts are so important with LLMs. Both the length of the context, and the ability of the LLM to use that context effectively are important, because longer context means we can get more nuanced and sophisticated answers. The formulation of any problem depends on how well we engineer the context. That context is what we also call the prompt (from which prompt engineering comes). Getting things done using an LLM is not always as simple as writing to it as you would to a friend. One has to understand how responses are generated, and then leverage the nuances of that process, to"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 19 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "always as simple as writing to it as you would to a friend. One has to understand how responses are generated, and then leverage the nuances of that process, to then get the right responses from the LLM. System Prompts & Conversations The system prompt, user prompt, and even the entire conversation are all context for the LLM. When the LLM responds to a long conversation, it’s using the entire conversation history as the context from which to generate the response. Thus, a conversation is just a specially formatted context, and not an entirely different type of input."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 19 :: 360",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and not an entirely different type of input."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 20 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "A Crash Course on How LLMs Work 12 The T ext is Not Meaning You have to always remember that LLMs only operate in the text domain, and don’t primarily work on the meaning of texts like humans. Instead, they simulate meaning by learning patterns around text. Like we talked about in Chapter 1, the LLMs don’t really get the concept of the words encountered, but rather only rely on other surrounding words to predict the next word. It’s we who assign meaning to things: both inputs and outputs. When we write a prompt, all that the model sees is text, but we have taken some meaning and represented it as text. When the model outputs text, it is we"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 20 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "we write a prompt, all that the model sees is text, but we have taken some meaning and represented it as text. When the model outputs text, it is we who then interpret it and then apply it to the real world. The analogy is much like a calculator. You can input numbers and get numbers back. But that doesn’t make the calculator a mathematician. It is we who interpret and give mean- ings to numbers. A 6 is just a 6 to a calculator regardless of whether we’re talking about the quantity of apples, or someone’s height, or the time of the day. It’s just that the LLM is a higher dimensional calculator, which can often give an illusion"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 20 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "about the quantity of apples, or someone’s height, or the time of the day. It’s just that the LLM is a higher dimensional calculator, which can often give an illusion that it’s more than a calculator. But note that all LLMs run on standard computers of today, which at their core have the “Arithmetic and Logic Unit,” whose operations are just prim- itive arithmetic operations like add/subtract, and logical operations like AND/OR. Every - thing you see the LLM do is broken down into these operations, even if it looks surprising on how adding and multiplying numbers could ever produce coherent texts. But it does! The takeaway is that we assign meaning. No meaning is inherent to an LLM; only"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 20 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "surprising on how adding and multiplying numbers could ever produce coherent texts. But it does! The takeaway is that we assign meaning. No meaning is inherent to an LLM; only symbols are inherent to LLMs. Summary 1. The basic principle of operation of LLMs is predicting the next word. By doing this repeatedly, entire responses are generated. AI is about acting intel- ligently within a specific environment. 2. By cleverly using this basic principle, we can get the LLM to perform intel- ligently on many tasks in specific environments. 3. Despite that, LLMs only operate on texts and not their meanings. It’s we who assign meanings to both inputs and outputs."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 20 :: 360",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Despite that, LLMs only operate on texts and not their meanings. It’s we who assign meanings to both inputs and outputs."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 21 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 3 The Word is a Lie “Details make perfection, and perfection is not a detail.” – Leonardo da Vinci We’ve covered the basic principle of how LLMs work in the previous chapter. However, there are two refinements that we can make to our understanding. The first is in knowing how words are seen by an LLM. We talked about how LLMs don’t really understand the meaning of words but only see them in relation to other surrounding words. We’ll understand just how they do this using some light math. The second is in looking at words themselves more closely. Actually, instead of words, LLMs operate on tokens. In practice, these two are usually interchangeable, and don’t really change how"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 21 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The second is in looking at words themselves more closely. Actually, instead of words, LLMs operate on tokens. In practice, these two are usually interchangeable, and don’t really change how you might use LLMs. But we cover tokens because the term is widely used. Let’s begin. How LLMs See Words We’ll use some light math to briefly see how LLMs model relationships between words without really understanding the meaning of any particular word. LLMs represent each word as a list of numbers, also called embeddings, as shown in the figure below: running: [0.67, 0.10, -0.29, 0.58, 0.21] ocean: [0.55, -0.02, 0.76, -0.40, 0.18] Words and their example embeddings (list of numbers)"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 21 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "below: running: [0.67, 0.10, -0.29, 0.58, 0.21] ocean: [0.55, -0.02, 0.76, -0.40, 0.18] Words and their example embeddings (list of numbers)"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 22 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Word is a Lie 14 Now, note the following about these embeddings: 1. The list of numbers associated with each word is arbitrary. It does not mean anything specifically by itself. These numbers are derived during the training process. 2. However, these numbers allow us to mathematically model the relation- ship between words. These numbers are such that they can relate to numbers of other words. For example, it’s through these numbers that we say that the words like dogs and cats are probably related, and to what extent are they similar. 3. This mechanism has a surprising implication. Hypothetically, if the words “hello” and “world” were used in exactly the same way in the LLM’s training data, the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 22 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "are they similar. 3. This mechanism has a surprising implication. Hypothetically, if the words “hello” and “world” were used in exactly the same way in the LLM’s training data, the LLM would see no difference between those words and behave as if they were the same. The numbers make it obvious that no meaning is being encoded behind these words, the way humans would. Instead, the numbers allow a trained LLM to encode patterns of grammar, logic, and anything else. For example, think of the numbers 5 & 3, and 12 & 10. Although the numbers are themselves different, their difference is 2 in both cases, meaning that their relationships are the same. This brings us back to the analogy"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 22 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "12 & 10. Although the numbers are themselves different, their difference is 2 in both cases, meaning that their relationships are the same. This brings us back to the analogy from Chapter 1. When seeing a table, you might picture a table in your head, and all the associated considerations and facts about it, as shown below. The LLM, on the other hand, only sees words as being similar or different based on the surrounding context that the words were usually found in, as shown below."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 23 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Word is a Lie 15 Dogs are very cute animals. So are cats. You just need to feed them well and take good care of them. To the above, we can now add the mechanism by which LLMs determine this similarity. Imagine that the words cats and dogs were represented internally by two lists of numbers (embeddings) respectively. That’s what the LLM really sees when it sees these words. And by operating on these numbers, it knows that the words dogs and cats are probably related. dogs: [0.12, -0.33, 0.81, 0.05, -0.44] cats: [-0.31, 0.60, -0.07, 0.89, -0.21] Words and their example embeddings (list of numbers) The embeddings don’t change the fact that words are only known by their"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 23 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "0.81, 0.05, -0.44] cats: [-0.31, 0.60, -0.07, 0.89, -0.21] Words and their example embeddings (list of numbers) The embeddings don’t change the fact that words are only known by their relationship to other words. Embeddings merely are the mechanism by which that’s achieved. Words vs. T okens We’ve been using the term words whenever we talked about how LLMs process their inputs and outputs. However, you would have heard of tokens, and how LLMs actually process text in terms of tokens. Even the API pricing usually mention the cost per token instead of word. Because of that, it’s advantageous to understand the concept of tokens. Why are T okens Needed? The first thing you should know is that most of"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 23 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "token instead of word. Because of that, it’s advantageous to understand the concept of tokens. Why are T okens Needed? The first thing you should know is that most of the time, a token is a word or a punctuation as you might imagine. Thus, the word hello can be both a token and a word."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 24 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Word is a Lie 16 Most of the time, the distinction between words and tokens does not matter. If you’re a user of assistants like ChatGPT or Claude or Gemini, you probably don’t need to know this. Even software engineers who work with LLMs don’t really need to understand this. It’s only people directly working on the underlying models, or working on fine-tuning them, who might benefit from being aware of this. The English language has hundreds of thousands of unique words; all with the compli- cations of roots and inflections. Representing them all uniquely would mean too many words to train on. The more the number of words, the more training data and time is required for the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 24 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and inflections. Representing them all uniquely would mean too many words to train on. The more the number of words, the more training data and time is required for the LLM to learn the relationship between all of them. That’s a combinatoric nightmare. Moreover, there would always be words that the LLM has never seen before, like company names, product names, and other clever portmanteaus that people keep inventing all the time. It has to still do a decent job of working with these words too. LLMs use various techniques to lower the number of unique “words” that they have to deal with. Thus, instead of representing text using hundreds of thousands of unique words, they represent it using a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 24 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "to lower the number of unique “words” that they have to deal with. Thus, instead of representing text using hundreds of thousands of unique words, they represent it using a smaller vocabulary of tokens. What are T okens? Tokens are either words or parts of words. Now how an LLM chooses to tokenize its content differs from model to model, so we’ll take a generic example to understand the underlying concept. The actual tokenization for your particular LLM might be different. When the LLM encounters some text, like “life is happiness”, it could tokenize it as “life”, “is”, and “happiness”. Which means 3 tokens or words. Or it could also tokenize it as “life”, “is”, “happy”, “ness”. This is 4"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 24 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "happiness”, it could tokenize it as “life”, “is”, and “happiness”. Which means 3 tokens or words. Or it could also tokenize it as “life”, “is”, “happy”, “ness”. This is 4 tokens for 3 words. There are two purposes to this. First is to learn richer representations of words more easily. For example, having “ness” as a separate token helps when dealing with words like “sadness” too, which might be toke- nized to “sad”, “ness”. Second is to deal with novel vocabulary, like names. For example, the LLM might have never encountered the word “Raahul, ” and yet I can prompt the LLM with it, and also have the LLM respond with it. If the LLM hasn’t encountered this word before,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 24 :: 360",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "encountered the word “Raahul, ” and yet I can prompt the LLM with it, and also have the LLM respond with it. If the LLM hasn’t encountered this word before, it uses existing tokens that it knows about to construct it. So “Raahul” is tokenized as “Ra” , “ah” , “ul. ” It’s worth mentioning again that in practice, the way an LLM manages tokens is an imple- mentation detail, and the user of the LLM is not expected to know how exactly it’s being done."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 25 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Word is a Lie 17 Summary 1. LLMs see relationship between numbers, for which they use embeddings. They do not see meanings behind words. 2. LLMs operate on tokens and not words. Tokens can be sub-words. However, most of the times, the token is the same as the word. 3. Tokens allow creating richer representations of words and also handle novel vocabulary for inputs and text generation. 4. As a user of any LLM, we are not expected to understand how tokenization happens."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 26 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 4 How LLMs are Trained “Any sufficiently advanced technology is indistinguishable from magic.” — Arthur C. Clarke So far, we’ve learned about how LLMs work, including the concept of tokens. Next, we’ll understand how they are trained, and also understand why it takes so much data, compute, and power to create such models. Our focus will be on the broad strokes instead of the technical details. For that, we’ll take the following approach: 1. Understand how traditional machine-learning models are trained. 2. Learn how LLMs are trained instead. 3. Finally, look at how LLMs are further instruction-tuned so that they precisely answer the questions asked to them, while still working on the predict-the- next-token mechanism. Training a Traditional Machine"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 26 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Finally, look at how LLMs are further instruction-tuned so that they precisely answer the questions asked to them, while still working on the predict-the- next-token mechanism. Training a Traditional Machine Learning Model A machine learning model predicts something. Those predictions are usually: 1. Labels: Like “spam” or “not spam. ” Models doing this are called classifica- tion models. 2. Numerical Values: Like predicting the price of an item as being $13,402. Models doing this are called regression models."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 27 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 19 In Chapter 1, we saw an example of the training data for a regression model as follows: x (input) y (output) 1 4 2 8 3 12 This training data has two parts: 1. Features: The thing the model sees to make its prediction. In the table above, the feature is x. 2. Targets: The thing that the model predicts; whether a label or a numerical value. In the above table, the target is a numerical value denoted by y. The targets you pass during training are also called the ground truth. From this, the training process infers a relationship between the features and the targets. In this case, that relationship is y = 4x."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 27 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "training are also called the ground truth. From this, the training process infers a relationship between the features and the targets. In this case, that relationship is y = 4x. That relationship is also the model. Now, whenever you give new values of x to this model—even ones it has not seen during training—it will accurately predict the value of y. Thus, as in Chapter 1, if we give the model a value of x as 7, it will correctly predict 28 (y = 4x = 4*7 = 28). And that’s the essence of the usual ML model. In this particular case, because we’re providing the ground-truth targets—whether labels or numerical values—during training (in the form of y), the training"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 27 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "that’s the essence of the usual ML model. In this particular case, because we’re providing the ground-truth targets—whether labels or numerical values—during training (in the form of y), the training process is called supervised learning."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 28 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 20 Training a Large Language Model The objective of an LLM is to predict the next token given all of the previous tokens. The process of training looks almost the same as the process of using an LLM to generate text. Let’s break this down. Step 1: The Input Documents Consider that we have a document as follows: The quick brown fox jumps over the lazy dog. An example document with just one sentence DOCUMENT #1 This is a short document, with just one sentence, “The quick brown fox jumps over the lazy dog. ” This would be your typical input document. These input documents could be: 1. All of the Wikipedia pages. 2. Documents on"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 28 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "quick brown fox jumps over the lazy dog. ” This would be your typical input document. These input documents could be: 1. All of the Wikipedia pages. 2. Documents on GDrive. 3. Lyrics of different songs. 4. Content of books. 5. And so on. All of the above kinds of documents are useful in training an LLM as we’ll shortly see. That’s why most companies working on foundation models try to get their hands on as many types of documents as possible. Also, there’s a reason why you’re learning the training process of LLMs this late in the book. The prerequisite to understanding training is to know that LLMs don’t learn meaning of words, only their relationships. That’s why you"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 28 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "training process of LLMs this late in the book. The prerequisite to understanding training is to know that LLMs don’t learn meaning of words, only their relationships. That’s why you can’t teach an LLM by using a dictionary alone, for example."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 29 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 21 Instead, LLMs have to see the usages of words in a multitude of different contexts in order to learn those relationships. Let’s do a thought experiment to understand how relationships differ from meaning. Humans grasp the concept of a word (the meaning, so to speak), and are able to generate as many sentences as they’d like from that understanding. An LLM, on the other hand, needs to see a word being used in a multitude of contexts for it to relate it to other words. This is because it cannot get the concept of the word, just the patterns of its usage. Now let’s try to see the usage of words through the eyes of"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 29 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "This is because it cannot get the concept of the word, just the patterns of its usage. Now let’s try to see the usage of words through the eyes of an LLM. Imagine a list of sentences as follows, where I’ve masked a word. That word is the same in all sentences, but we do not know what that word is. So we cannot really get a concept or meaning of any of the sentences. This is a good way to simulate what LLMs see. Sentences each using the same masked word I sat on the <word> by the window. SENTENCE #1 The <word> in the classroom is blue. SENTENCE #2 A <word> fell over during the game. SENTENCE #3"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 29 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "masked word I sat on the <word> by the window. SENTENCE #1 The <word> in the classroom is blue. SENTENCE #2 A <word> fell over during the game. SENTENCE #3 He put his backpack on the <word> window. SENTENCE #4 Now, what is it that we can do from these sentences? Well, a lot, actually: First, we can get some idea of how this word is used in relation to other words, even if we don’t know that exact word. Second, from the sentences with the masked word, we can still construct new grammat - ically correct sentences using that word. This is despite us not knowing the word! This is a very important insight. For example, sentences like “The"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 29 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "still construct new grammat - ically correct sentences using that word. This is despite us not knowing the word! This is a very important insight. For example, sentences like “The <word> kept standing during the game” , and “The <word> in the classroom is beautiful”, are all sentences that are probably grammatically correct, despite us not knowing either the word or its meaning. (For the curious, the hidden word is actually table)"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 30 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 22 This is what the LLM does, actually. It is able to generate grammatically valid sentences from patterns it has learned, without ever having to know the meanings of the words. It also implies that LLMs will often generate grammatically correct texts that are semanti- cally dubious. Now you understand the difference between learning the meaning as opposed to the rela- tionship. Given all of the above, we understand why so much text is needed to train LLMs. Because they have to see all words or tokens in a multitude of possible contexts, so that they can learn how to use those tokens correctly when producing output. Step 2: Derivation of Training Data Now that we"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 30 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "tokens in a multitude of possible contexts, so that they can learn how to use those tokens correctly when producing output. Step 2: Derivation of Training Data Now that we have the input documents, we have to generate training data from those input documents. The documents themselves are not the training data, but merely a source from which we can derive them. First, let’s again look at how an LLM generates text by taking into account all previous tokens, as follows: The quick brown The quick brown fox The quick brown fox jumps CONTEXT NEW TOKEN 1] CONTEXT NEW TOKEN 2] 3] CONTEXT NEW TOKEN The same concept is used when deriving the training data. Consider the sample document we"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 30 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "brown fox jumps CONTEXT NEW TOKEN 1] CONTEXT NEW TOKEN 2] 3] CONTEXT NEW TOKEN The same concept is used when deriving the training data. Consider the sample document we saw in Step 1:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 31 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 23 The quick brown fox jumps over the lazy dog. An example document with just one sentence DOCUMENT #1 From that, we artificially construct the following training data, which is our sets of features and targets. Feature (Context) Target (Predicted Word/Token) The quick The quick brown The quick brown fox The quick brown fox jumps The quick brown fox jumps over The quick brown fox jumps over the The quick brown fox jumps over the lazy The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <EOS> (end-of-sequence) Note the following: 1. The feature is just a part of the input text (or sentence in this case). 2."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 31 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "quick brown fox jumps over the lazy dog <EOS> (end-of-sequence) Note the following: 1. The feature is just a part of the input text (or sentence in this case). 2. The target is just the next word/token that appears immediately after the feature text. 3. We keep repeating this pattern; sliding the feature and moving to the next target. But each time predicting only one token. 4. The final token predicted is <EOS> (end-of-sequence), which trains the LLM to stop emitting more tokens when it’s done."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 32 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 24 Imagine breaking down all the input documents to derive training data in this fashion. Just one sentence can balloon to many training points. That’s why the actual training data is always more massive and repetitive compared to the input documents. Thus, an input of 100 books might generate an exponentially larger training data. That’s one factor that contributes to why these models take so much time to train. Of course, whatever you’re seeing here is a simplified analogical version. In the real-world, a lot more precise pre-processing steps have to be applied before we can arrive at a proper clean training data. Some of the technical details that we’ve skipped are concepts like positional encoding,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 32 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "precise pre-processing steps have to be applied before we can arrive at a proper clean training data. Some of the technical details that we’ve skipped are concepts like positional encoding, but these are implementation details rather than the broad strokes. Step 3: Training of the Model Finally, we’re at the actual model training step. The model architectures that are trained themselves are very involved. However, the process of training is itself highly repetitive. We just supply the training data repeatedly to the model so that it incrementally learns to predict the next token, as follows: The overall training process of a language model The quick brown FEATURE (INPUT) fox TARGET (OUTPUT) FEEDBACK LOOP Model Being Trained Prediction Error During training,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 32 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the next token, as follows: The overall training process of a language model The quick brown FEATURE (INPUT) fox TARGET (OUTPUT) FEEDBACK LOOP Model Being Trained Prediction Error During training, the model predicts the next token, and that prediction is compared to the target. The prediction error represents how well the current model is able to predict, and corrects for the mistakes by adjusting the parameters of the neural networks. This happens over the entire dataset multiple times, till the model learns to do its predictions really well. Naturally, this takes a lot of time and also a lot of resources."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 32 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "takes a lot of time and also a lot of resources."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 33 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 25 Post the training process, this is what is learned: 1. The embeddings (list of numbers) against each token. Again, these numbers are arbitrary by themselves, but maintain a specific relationship with the numbers of other tokens. Embeddings encode the static relationships between tokens. For example, we can infer the general static relationship that “dogs” and “cats” are similar by looking at their embeddings alone. 2. The values of all the neural network parameters which now helps the model predict next tokens given the current context. The LLM learns patterns of grammar, logical statements, and any other dynamic patterns of relation- ships that can be inferred from text. For example, in the sentence, “The dog chased"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 33 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The LLM learns patterns of grammar, logical statements, and any other dynamic patterns of relation- ships that can be inferred from text. For example, in the sentence, “The dog chased the cat,” who’s chasing whom is a dynamic relationship. LLMs use billions of parameters to learn these patterns effectively, which is another factor (apart from the training data size) that contributes to long training time and heavy resource usage. Here’s an example again from Chapter 3 of embeddings that are learned: dogs: [0.12, -0.33, 0.81, 0.05, -0.44] cats: [-0.31, 0.60, -0.07, 0.89, -0.21] Words and their example embeddings (list of numbers) And here’s an example of a dynamic relationship, as seen in Chapter 1: Large language models have many uses."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 33 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "-0.07, 0.89, -0.21] Words and their example embeddings (list of numbers) And here’s an example of a dynamic relationship, as seen in Chapter 1: Large language models have many uses. They can write SQL and even Python. Note how when processing “They”, the attention mechanism realizes that it refers to “Large language models.”"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 34 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 26 An LLM would associate “they” with “large language models” in the above piece of text. However, “they” could refer to just about anything, and you’d have to process the text to actually know what it is referring to in the text. This is an example of a dynamic relation- ship between words. It’s the LLM’s neural network that takes static embeddings of words (just list of numbers) and is still able to encode dynamic relationships between them. Why LLMs are Called Auto-Regressive As an aside, LLMs are called auto-regressive models because each new token is predicted from all previously generated tokens. Newly generated tokens thus become inputs for future tokens. The Next Steps Once you’ve"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 34 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "LLMs are called auto-regressive models because each new token is predicted from all previously generated tokens. Newly generated tokens thus become inputs for future tokens. The Next Steps Once you’ve trained such a model, you have what we’d call a foundation model. This is the model that can auto-complete whatever texts you pass to it. However, to make such models answer questions or follow instructions, we need to instruction-tune this founda- tion model further. That’s what we’ll look at next."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 35 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 27 Instruction- Tuning the Model In Chapter 2, we talked about how as users, we don’t ask LLMs to auto-complete our texts. Rather, we give it instructions and questions and expect an appropriate response. We achieve this by taking a foundation model, and then further fine-tuning it on special- ized datasets spanning many specific tasks. That’s how the model learns how to predict next tokens in a manner that allows it to write SQL, code, emails, poems, and the likes. This kind of fine-tuning to make LLMs follow instructions is also called instruction-tuning. What’s Fine- Tuning? Fine-tuning is a fancy name, but it still means training. We take a foundation model and further train it on"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 35 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "LLMs follow instructions is also called instruction-tuning. What’s Fine- Tuning? Fine-tuning is a fancy name, but it still means training. We take a foundation model and further train it on some more specialized data. The training data for fine-tuning are generally smaller in volume, and we also only train the model for a few cycles. This way, the model learns the specialized task, but doesn’t forget its original training on the vast dataset. Also, instead of the model focusing on just learning to generate the next token, it learns from pairs of texts, like questions/answers. Fine-tuning an existing language model Write an email for... FEATURE (INPUT) Hello, we are writing to inform.... TARGET (OUTPUT) FEEDBACK LOOP Foundation Model Prediction Error"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 35 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "pairs of texts, like questions/answers. Fine-tuning an existing language model Write an email for... FEATURE (INPUT) Hello, we are writing to inform.... TARGET (OUTPUT) FEEDBACK LOOP Foundation Model Prediction Error on Specialized Dataset In the diagram above, we can see input/output pairs being supplied to a foundation model to train it further. Fine- Tuning for Specialized Tasks Fine-tuning requires you to primarily have datasets with the inputs that the user might typically write, and the corresponding output that you’d want the LLM to generate for it. From this, the LLM is able to generalize to a broad range of inputs."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 35 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "is able to generalize to a broad range of inputs."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 36 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 28 Let’s look at a sample training data for taking a text input from the user (like a question, or instruction) and create an SQL query from it. Here’s an example below: Example of a dataset for /f_ine-tuning the question to SQL use-case “What country won the award in 1999?” USER QUESTION #1: CORRESPONDING SQL #1: Look at how we’d want the precise SQL given arbitrary natural language questions from the user. Another example training data is for writing Python code, which is formatted similarly: Example of a dataset for /f_ine-tuning the question to Python use-case “Write a function to return the sum of all even numbers in a list.” USER QUESTION #1: CORRESPONDING PYTHON #1:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 36 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "of a dataset for /f_ine-tuning the question to Python use-case “Write a function to return the sum of all even numbers in a list.” USER QUESTION #1: CORRESPONDING PYTHON #1: Through fine-tuning, the foundation model is further trained on such relatively smaller datasets to accustom the model to seeing a wide variety of tasks that the user would potentially want it to perform. Here’s a contrast between fine-tuning a model as opposed to not doing it at all:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 37 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 29 1. Before fine-tuning, the model might take a question and complete the question itself by elaborating on it, instead of actually giving an answer. For example, if someone asks the model to write SQL, it might just auto-com- plete more of the question rather than writing SQL code. 2. After fine-tuning, the model would take the input question start answering it immediately; like taking a request and generating an SQL immediately from it. Here’s an illustration of both cases: Illustration of before/a/f_ter /f_ine-tuning [representative only] “Write a SQL query to get all customers. ” USER QUESTION: BEFORE FINE-TUNING: You want me to write a SQL query to get all customers. SQL is a language used"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 37 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "“Write a SQL query to get all customers. ” USER QUESTION: BEFORE FINE-TUNING: You want me to write a SQL query to get all customers. SQL is a language used for querying databases, and to retrieve customers... AFTER FINE-TUNING: SELECT * FROM customers; Note that we’re giving the model the kind of questions or instructions that users usually have and teaching it to give an answer. Again, this is why we call this fine-tuning as instruc- tion-tuning. In the Real World In the real-world, the model is fine-tuned on a wide variety of common tasks, often with meticulously curated training data. While the foundation model is trained on just huge chunks of texts of great variety, the data used for"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 37 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "wide variety of common tasks, often with meticulously curated training data. While the foundation model is trained on just huge chunks of texts of great variety, the data used for fine-tuning is often more curated. This is why when you ask mainstream AI assistants to write emails, code, or even solve logical problems, it is able to do so. It has already been fine-tuned on those tasks. However, even after fine-tuning, the model is still just auto-completing tokens. It’s just that the pattern of that auto-complete resembles answering questions rather than merely elaborating on what’s already there."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 37 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "than merely elaborating on what’s already there."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 38 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How LLMs are Trained 30 Additionally, it’s also possible for end-users like us to fine-tune LLMs on proprietary data- sets. That way, you only have to teach the model the specific skills you have in mind, rather than starting to teach the model everything (including English) from scratch. However, most of the time, the models are powerful enough that prompts alone will take you very far, and we don’t need to resort to fine-tuning. With that, you now know the big picture of how models are trained. You also understand why it takes so much compute and resources. Summary 1. The training data for LLMs are derived from large volumes of text. 2. A foundation model is trained from this"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 38 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "why it takes so much compute and resources. Summary 1. The training data for LLMs are derived from large volumes of text. 2. A foundation model is trained from this data, which learns the patterns of word usages and not meaning. 3. This foundation model is further fine-tuned to follow instructions (hence called instruction-tuning); this is what allows the model to reliably do the tasks for writing code and content, without needing the user to set it up as a predict-the-next-word problem. The fine-tuned datasets are usually smaller and more curated, and have both inputs and the required outputs specified. 4. An end-user can also fine-tune such LLMs. However, most of the times, clever prompting works wonders by itself, and"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 38 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "curated, and have both inputs and the required outputs specified. 4. An end-user can also fine-tune such LLMs. However, most of the times, clever prompting works wonders by itself, and you generally don’t have to resort to fine-tuning."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 39 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 5 Why LLMs Don’t Give the Same Answer Twice “Vague and insignificant forms of speech, and abuse of language, have so long passed for mysteries of science; … ” —John Locke We’ve covered how LLMs work, how they’re trained, and also setting up tasks and instruc- tion-tuning. Now, it’s time to go back to predict-the-next-token model and refine it further. Our refined mental model will explain why LLMs give different responses each time we give it the same prompt. Although our approach will be slightly mathematical, the payoff will be huge, because it’ll also help us understand creativity and hallucination in the next chapter. In this chapter, we’ll cover: 1. Looking briefly at how the responses we get can"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 39 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "be huge, because it’ll also help us understand creativity and hallucination in the next chapter. In this chapter, we’ll cover: 1. Looking briefly at how the responses we get can be different for the same prompt. 2. Revising our mental model of how next tokens are generated by LLMs. We’ll learn in detail the concept of decoding. Also, we’ll reinforce the fact that LLMs look at relationships instead of meaning. 3. Controlling this randomness of outputs that we get from LLMs."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 40 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 32 The Variance in Responses Consider the prompt: “Write an email informing the customer that the order has been shipped. ” What happens when we give this prompt twice to the LLM? Let’s see an example result in the illustration below: Illustration of before/a/f_ter /f_ine-tuning [representative only] “Write an email informing the customer that the order has been shipped. ” PROMPT: ATTEMPT #1: Subject: Your Order Has Shipped Hi [Customer Name], Your order has been shipped and is on its way. You’ll receive tracking details shortly. Thank you for shopping with us! Best, [Your Name] ATTEMPT #2: Subject: Order Shipment Con/f_irmation Hello [Customer Name], Good news—your order has shipped. You can track"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 40 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "receive tracking details shortly. Thank you for shopping with us! Best, [Your Name] ATTEMPT #2: Subject: Order Shipment Con/f_irmation Hello [Customer Name], Good news—your order has shipped. You can track its progress using the link provided in your account. Let us know if you need anything else. Regards, [Your Name] The two responses achieve the same thing, but are worded differently. The amount of difference we’d see depends on the prompt and the kind of response that we’re looking for. Sometimes, the responses vary slightly but stay the same in spirit, but can also vary wildly. The main question is, why does this happen? And is there a way to control it?"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 40 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "spirit, but can also vary wildly. The main question is, why does this happen? And is there a way to control it?"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 41 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 33 Revisiting the Way LLMs Predict T okens In this book, we started with predict-the-next-word model. Then, we refined it to predict- the-next-token, because we understood the difference between words and tokens. Now it’s time to refine the predict-the-next-token concept even further, adding to whatever we’ve learned so far. In this section, we’ll look at: 1. A review of our current mental model. 2. The nuance that the current mental model doesn’t address. 3. The refined mental model for generating next tokens using decoding. 4. Implications of that refined model in practice. Review of the Current Mental Model In Chapter 2, we talked about The Magic Principle on which LLMs worked, which"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 41 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "using decoding. 4. Implications of that refined model in practice. Review of the Current Mental Model In Chapter 2, we talked about The Magic Principle on which LLMs worked, which was predicting the next token, as illustrated below: The quick brown The quick brown fox The quick brown fox jumps CONTEXT NEW TOKEN 1] CONTEXT NEW TOKEN 2] 3] CONTEXT NEW TOKEN By using the principle above, we could get LLMs to write emails, code, and anything else that we could think of. As long as we were able to specify our problem as something that the LLM could auto-complete, we were good. To make completing tasks easier, we also learned about instruction-tuning and how it makes LLMs more intuitive"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 41 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "specify our problem as something that the LLM could auto-complete, we were good. To make completing tasks easier, we also learned about instruction-tuning and how it makes LLMs more intuitive to use. Here’s the illustration from Chapter 4:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 42 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 34 Illustration of before/a/f_ter /f_ine-tuning [representative only] “Write a SQL query to get all customers. ” USER QUESTION: BEFORE FINE-TUNING: You want me to write a SQL query to get all customers. SQL is a language used for querying databases, and to retrieve customers... AFTER FINE-TUNING: SELECT * FROM customers; We further saw how LLMs are trained. They’re taught to predict the next token, just as they’re expected to do during inference. We supply LLMs training data that look similar to: Feature (Context) Target (Predicted Word/Token) The quick The quick brown The quick brown fox The quick brown fox jumps The quick brown fox jumps over The quick brown fox jumps over"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 42 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "(Context) Target (Predicted Word/Token) The quick The quick brown The quick brown fox The quick brown fox jumps The quick brown fox jumps over The quick brown fox jumps over the The quick brown fox jumps over the lazy The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <EOS> (end-of-sequence) All of this must already be familiar to you. However, these are the very mental models that we are going to refine, so it’s important for you to contrast the refinements with whatever you’ve already learned. The Nuance that the Current Model Doesn’t Address In the real-world, the LLM gets training data from a wide variety of sources. Thus, it often"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 42 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "with whatever you’ve already learned. The Nuance that the Current Model Doesn’t Address In the real-world, the LLM gets training data from a wide variety of sources. Thus, it often sees different possible tokens that can come after whatever context that it’s looking at. For example, in the following table, it’s clear that the next token is not a singular thing; we usually have different possible tokens from which to choose."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 43 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 35 Feature (Context) Target (Predicted Word/Token) ...more rows... ... The quick brown The quick brown fox The quick red The quick red cat ...more rows... ... For example, the phrase “The quick” can be followed by “brown” or “red”. These alternatives can further diverge into two entirely different phrases: 3. “The quick brown fox” 4. “The quick red cat” That’s the major detail we’ve avoided talking about. We’ve assumed so far that there is only one best next token. However, that’s not true. There are always several options. If there are several options, then how does the LLM decide which option to choose? Now that’s a very interesting question. In truth, the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 43 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "true. There are always several options. If there are several options, then how does the LLM decide which option to choose? Now that’s a very interesting question. In truth, the LLM doesn’t. Instead of giving us the next token, the LLM only gives us a list of options for the next token, along with the odds of those tokens being the appropriate next tokens. Let’s look at a highly simplified illustration of that below: Multiple options for the next token with diﬀerent chances brown 42% The quick red green 38% 20%"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 43 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "20%"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 44 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 36 In the above example, we see that: 1. The context is “The quick”. 2. The LLM then gives us 3 alternatives for the tokens that can follow this context. 3. The first is “brown”, which has a 42% chance of occurring as per the LLM. 4. The second is “red” with a 38% chance of occurring. 5. The third is “green” with a 20% chance of occurring. In this highly simplified example, we’re only looking at 3 possible alternatives. In the real- world, this list itself can be enormously long. Despite the possible number of next tokens, these facts remain: 1. The LLM gives you a list of next possible tokens."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 44 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "real- world, this list itself can be enormously long. Despite the possible number of next tokens, these facts remain: 1. The LLM gives you a list of next possible tokens. 2. Each of those tokens are associated with the chance (probability) of their occurrence. The LLM estimates this chance from whatever it has seen during training. This matches our intuition. When looking at a phrase, we can ourselves think of words that can follow it, but not all of them are equally appropriate. It all depends on the context. And that’s exactly what the LLM learns from the corpus and then applies it when generating text. The proper phrase for the LLM giving us the list of tokens and the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 44 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "that’s exactly what the LLM learns from the corpus and then applies it when generating text. The proper phrase for the LLM giving us the list of tokens and the chance of occurrence of each is: probability distribution over tokens. That’s a mathematical phrase for saying the exact same idea that we talked about. We can see the list of tokens and their corresponding probabilities (chances) as a table below: The chances of all possible next tokens after the text “The quick” Next Possible Token Probability / Chance brown 42% red 38% green 20% In the real-world, of course this list would contain the full vocabulary of the LLM along with the corresponding probabilities, where some tokens can appear with"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 44 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "red 38% green 20% In the real-world, of course this list would contain the full vocabulary of the LLM along with the corresponding probabilities, where some tokens can appear with a greater chance, whereas most others would have close to a zero chance."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 45 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 37 What you see here is the real output of an LLM. It’s not the next token directly, but a prob- ability distribution over the vocabulary of the LLM. However, this doesn’t invalidate the fact that the LLM is still trying to predict the next token. It’s just that this prediction is not perfect, by which we mean there isn’t one right answer. That’s the core refinement that we’re making here. Naturally, the next question would be, how do we arrive at just one token as the next token then? That’s what we’ll answer in the next subsection, where we’ll understand the process of decoding. Decoding: Applying the Refined Mental Model As"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 45 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "just one token as the next token then? That’s what we’ll answer in the next subsection, where we’ll understand the process of decoding. Decoding: Applying the Refined Mental Model As we saw before, LLMs only give you a probability distribution over the tokens, but don’t directly single out the next token for you. That singling out happens in a step called decoding, which resides outside the LLM. It’s important to appreciate the fact that decoding happens outside of LLMs, which also implies that it happens outside of any reasoning of which the LLM is capable! This has many implications for how we think about reasoning or even about “this is what the LLM said. ” The LLM never says anything!"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 45 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "which the LLM is capable! This has many implications for how we think about reasoning or even about “this is what the LLM said. ” The LLM never says anything! Decoding will give us a renewed appreciation for how LLMs don’t really see meaning. The only thing an LLM aims for is coherence, which needn’t be meaningful. Let’s now jump into decoding. Below is the probability distribution that an LLM returns. Note that we’re looking only at the decoding of one single token for now. Here’s how the probability distribution table looks from before: The chances of all possible next tokens after the text “The quick” Next Possible Token Probability brown 42% red 38% green 20% Total 100% Note that"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 45 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "table looks from before: The chances of all possible next tokens after the text “The quick” Next Possible Token Probability brown 42% red 38% green 20% Total 100% Note that all probabilities add up to 100%. Each next token has a different chance of being selected as the next token. The token “brown” as a 42% chance, “red” a 38%, and “green” a 20% chance. These add up to 100%."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 46 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 38 The decoding process basically looks like this: 1. Get all the next possible tokens as well as their probabilities. 2. Pick either deterministically or randomly (stochastically) from these tokens, giving you exactly one token to proceed with. We cover both of these strate- gies next. First, let’s look at the deterministic strategy. We merely pick the token with the highest probability, as follows: Deterministic selection of next token to follow the text “The quick” Next Possible Token Probability Selected? brown 42% Selected because 42% is the highest. red 38% green 20% The deterministic strategy always gives you the same output for the same prompt. While it’s consistent, it’s not really creative."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 46 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Selected because 42% is the highest. red 38% green 20% The deterministic strategy always gives you the same output for the same prompt. While it’s consistent, it’s not really creative. Modern LLMs want a mix of determinism and creativity at the same time, which is why you’d very rarely see this as the default strategy. Second, we’ll look at the random (stochastic) strategy. In this case, we randomly pick from the list proportional to the probability of each token, as depicted below: Random selection of next token to follow the text “The quick” Next Possible Token Probability Selected? brown 42% Gets picked ~42 times out of 100 red 38% Gets picked ~38 times out of 100 green 20% Gets picked"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 46 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "text “The quick” Next Possible Token Probability Selected? brown 42% Gets picked ~42 times out of 100 red 38% Gets picked ~38 times out of 100 green 20% Gets picked ~20 times out of 100 Each time the decoding process runs, even for the same prompt, it will randomly pick a token in a manner above. Thus, you potentially see a different token picked each time, resulting in a different answer. And this is usually the strategy that’s commonly used. It’s that simple! When generating text, this whole decoding process happens for each token that’s gener- ated. We’ll look at the implications of that in the next subsection, and understand why we see huge variances in the LLM’s responses for"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 46 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "happens for each token that’s gener- ated. We’ll look at the implications of that in the next subsection, and understand why we see huge variances in the LLM’s responses for the same prompts."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 47 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 39 Implications of the Refined Predict-the-Next- T oken Model When generating the whole text using the decoding process, we: 3. Get a distribution across all possible next tokens. 4. Randomly pick one as per the probability of each token. 5. Keep repeating the process till we reach EOS. Generating text this way looks like choosing from a tree otherwise branching out. We select one from the exponential number of possibilities. Look at the example below, where we show the generation of the phrase “The quick brown fox jumps”. (We’ve omitted <EOS> for simplicity) Choices at each token leading to exponential possibilities The quick brown red fox cat jumps. sleeps. jumps. sleeps. fox"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 47 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "phrase “The quick brown fox jumps”. (We’ve omitted <EOS> for simplicity) Choices at each token leading to exponential possibilities The quick brown red fox cat jumps. sleeps. jumps. sleeps. fox cat jumps. sleeps. jumps. sleeps. We make a choice when generating each token. You can follow the arrows to any path above to get different sentences, like: 1. “The quick brown cat sleeps. ” 2. “The quick red fox jumps. ” 3. And so on."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 48 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 40 It’s important to note that a different token choice very early in the text can lead to an entirely different subsequent text. In the above case, the options are very symmetrical, but that needn’t be the case in the real world. And that branching out is exactly the reason why you get entirely different answers, often of different lengths, each time you prompt the LLM. Each time you make a different choice, you diverge to that degree. And by the time you’re at the last token, you’ve diverged quite a bit. That’s the essence of why you can get drastically different answers for the same prompt. On Meaning Again We’ve repeated"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 48 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "you’re at the last token, you’ve diverged quite a bit. That’s the essence of why you can get drastically different answers for the same prompt. On Meaning Again We’ve repeated quite a few times that LLMs don’t see meaning, but only surrounding words. And this whole concept of decoding further reinforces that idea. An LLM can generate something drastically different, just because it took a different turn while gener- ating a response to the same prompt. However, those different turns need not always just be stylistic changes! In other words, the answers of LLMs can also vary in meaning and not just wording, for the exact same prompt. It could happen that one possible answer is skeptical, while another is"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 48 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the answers of LLMs can also vary in meaning and not just wording, for the exact same prompt. It could happen that one possible answer is skeptical, while another is optimistic. We might mistakenly assume that the LLM will always be consistent in its answers. But that is far from the truth. For example, when it comes to humans, we might express ourselves differently on the same topic. We might change metaphors, anecdotes, and even the general style of speaking, all while keeping the core message of our content the same. On the other hand, because of how decoding works for LLMs, they can also change the answer they’re giving you, and not just the way that answer is expressed."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 48 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "same. On the other hand, because of how decoding works for LLMs, they can also change the answer they’re giving you, and not just the way that answer is expressed. It’s very easy to see why this is so. On the internet, you’d almost always find anything that you look for. For example, if you look for blog posts that say Python is a simple language, you’d find them. However, if you look for articles on why one should never use Python, you’d probably find that too. In short, a text on Python can be followed by either skepti- cism or optimism, depending on how the random decoding worked that time. The confusion of opinions often masquerading as facts often"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 48 :: 360",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "text on Python can be followed by either skepti- cism or optimism, depending on how the random decoding worked that time. The confusion of opinions often masquerading as facts often invades the training data of the LLM, which only sees text and doesn’t differentiate between opinions and facts. That’s why LLMs often very confidently give factual-looking responses that are just dressed up opinions. The decoding process makes clear why this suboptimal behavior occurs. This knowledge allows you to more wisely use LLMs to their fullest potential."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 49 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 41 Controlling the Randomness When using mainstream LLMs, we come across a term called temperature that supposedly allows us to control the random behavior of the decoding process. In this section, we’ll look at three major things: 1. What temperate is and how it’s used. 2. How temperature works. This is where we’ll revisit the probability distribu- tion tables of before, and you’ll get an instant intuition of how it works. 3. Which values of temperature are generally the most effective for different tasks. What is T emperature? Temperature (T) is a number from 0 to usually 2 (or more, depending on what is supported by the LLM); though the usual range"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 49 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "different tasks. What is T emperature? Temperature (T) is a number from 0 to usually 2 (or more, depending on what is supported by the LLM); though the usual range is from 0 to 1 in practice, which is the range we’ll explore. Here’s how the values work: 1. A value of T = 0 means no randomness. The decoding process picks the next most likely token deterministically; the one with the highest probability of occurring. 2. A value of T = 1 means the decoding is random (stochastic). Here, the decoder picks the next token with a chance proportional to their probabilities. 3. Any value of T between 0 and 1 is neither too random nor too deterministic, which"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 49 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the decoder picks the next token with a chance proportional to their probabilities. 3. Any value of T between 0 and 1 is neither too random nor too deterministic, which allows you to control how much randomness you see. The next subsec- tion is dedicated to this middle ground and exactly how it works. We’ve already seen the deterministic and random decoding strategy before. It’s the value of temperature between 0 and 1 that’s tricky to understand. We’ll cover all of these, including the previously seen strategies, in the next subsection. From a usage perspective, by adjusting the temperature, you adjust how creative you want the output to be. We’ll also cover the implications of this shortly. How T emperature"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 49 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "subsection. From a usage perspective, by adjusting the temperature, you adjust how creative you want the output to be. We’ll also cover the implications of this shortly. How T emperature Works We’ve already seen the deterministic and stochastic strategy, but let’s quickly see them again, because the tables we used earlier would come in handy. In the deterministic strategy, with a temperature of 0, the next token is selected without randomness in this fashion:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 50 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 42 Deterministic selection of next token to follow the text “The quick” when T = 0 Next Possible Token Probability Selected? brown 42% Selected because 42% is the highest. red 38% green 20% In the stochastic strategy, with a temperature of 1, the next token is selected randomly, but proportional to the probabilities of each token: Random selection of next token to follow the text “The quick” when T = 1 Next Possible Token Probability Selected? brown 42% Gets picked ~42 times out of 100 red 38% Gets picked ~38 times out of 100 green 20% Gets picked ~20 times out of 100 Now, let’s address the tricky part of when the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 50 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "out of 100 red 38% Gets picked ~38 times out of 100 green 20% Gets picked ~20 times out of 100 Now, let’s address the tricky part of when the temperature is between 0 and 1. In this case: 1. The picking of next token works just like it does in the random selection approach (temperature of 1). 2. However, instead of using the token probabilities supplied by the LLM verbatim, these probabilities are adjusted first. 3. When the temperature has a value between 0 and 1, the probabilities get adjusted such that the values become further apart. For example, if two tokens earlier had the probabilities of 4% and 7% respectively, they might become 2% and 10% post the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 50 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "adjusted such that the values become further apart. For example, if two tokens earlier had the probabilities of 4% and 7% respectively, they might become 2% and 10% post the adjustment. 4. When the temperature has a value above 1, the probabilities get adjusted such that the values come nearer to each other. For example, if two tokens earlier had the probabilities of 2% and 10% respectively, they might become 4% and 7% after the adjustment, making them nearer. (The opposite of what we saw in the previous point) 5. When the temperature values are either 0 or 1 exactly, we can analogically think of it as no adjustments happening."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 50 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "When the temperature values are either 0 or 1 exactly, we can analogically think of it as no adjustments happening."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 51 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 43 Let’s quickly see this illustrated below for temperature of T = 0.2: Random selection of next token to follow the text “The quick” when T = 0.2 Next Possible Token Probability Adjusted Prob. Selected? brown 42% 61% Gets picked ~61 instead of ~42 times out of 100 red 38% 37% Gets picked ~37 instead of ~38 times out of 100 green 20% 2% Gets picked ~2 instead of ~20 times out of 100 The adjustment is a mathematical process that we don’t need to understand. But we can easily understand the result of that process, which we get in the form of adjusted proba- bilities. Here’s an explanation: 1. When the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 51 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "don’t need to understand. But we can easily understand the result of that process, which we get in the form of adjusted proba- bilities. Here’s an explanation: 1. When the temperature T is between 0 and 1, the model becomes more and more certain about its choices, and some degree of randomness is removed from those probabilities. 2. For example, “brown” had the highest probability of 42%. It was only 4% higher than the token “red”. However, after the adjustment, “brown” shot up to 61%, meaning we became more certain about the best choice. 3. Also, the token “green” had the lowest probability of 20%. This went down sharply to around 2%, which means we became more certain that “green”"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 51 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "about the best choice. 3. Also, the token “green” had the lowest probability of 20%. This went down sharply to around 2%, which means we became more certain that “green” is not a good next token. 4. The token “red”, because it’s in the middle, did not appear to get impacted by the adjustment. But its probability now is very far apart from both “brown” and “green”. 5. If you lowered the temperate to 0, it would be similar to making the prob- ability of the token “brown” as 100%, and the rest as 0%, which is the deter- ministic case. What we need to primarily understand is that the decoding process still remains the same as for the random"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 51 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and the rest as 0%, which is the deter- ministic case. What we need to primarily understand is that the decoding process still remains the same as for the random case. It’s just that we adjust the probabilities of the tokens first. Also, while we’ll not cover the T > 1 case, because it’s rarer in practice, but it will work opposite to this, where tokens that were far apart in their probabilities might come nearer."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 52 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 44 Which Values of T emperature are the Most Effective In normal usages, a value of T = 0.75 gives you optimum conversation. The LLM does change its answer each time you ask the same question using the same words, but it is effective in giving you a broader view rather than a narrow echo chamber. A temperature of T = 1 can be good for creative tasks, where you’re either writing some- thing, or want ideas for scripts, compositions, and just about anything else. The point here is to use the LLM to explore a wide variety of possibilities instead of wanting to use its output verbatim. In very technical cases,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 52 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "about anything else. The point here is to use the LLM to explore a wide variety of possibilities instead of wanting to use its output verbatim. In very technical cases, where you want the exact same output each time that very input is given, a temperature of T = 0 can help. For example, if we’re extracting structured data in a JSON format from an email, we do not want our output to differ each time. We would want more consistency. In the usual cases, the value of the temperature would already be set by whichever LLM-based assistant that you’re using. You might not have to change that. And with that, we conclude our exploration into the concept of temperature."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 52 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "would already be set by whichever LLM-based assistant that you’re using. You might not have to change that. And with that, we conclude our exploration into the concept of temperature. And That’s That This chapter was very long, yet we intuitively covered all major aspects of how LLMs actu- ally generate tokens. An understanding of the decoding process can help us understand numerous behaviors of LLMs, including hallucinations and creativity, which we will cover next. This knowledge also prepares us to address the concept of reasoning, which will be covered in the final chapter."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 52 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "in the final chapter."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 53 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Why LLMs Don’t Give the Same Answer Twice 45 Summary 1. In the old model, we thought of LLMs generating the next token. However, a more refined version of that idea is that LLMs generate the probability distribution over tokens, given the context. 2. In the old model, we also thought of the decision of the next token as residing inside the LLM. However, it’s actually the decoding process that makes the decision. Decoding randomly chooses from all the possible next tokens proportional to their probabilities. Thus, the decision of what you’ll see as the next token resides outside the LLM. 3. In the old model, we thought of successive tokens being generated very linearly. However, token generation looks a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 53 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "what you’ll see as the next token resides outside the LLM. 3. In the old model, we thought of successive tokens being generated very linearly. However, token generation looks a lot like branching out, with us choosing one path from an exponential number of possibilities. 4. Making a different choice early on in the text during decoding can lead to texts that are subsequently very different, and also of different lengths. And that answers the question of why LLMs can generate vastly different responses for the same prompts. 5. By noticing how the actual token selection happens outside of LLMs, we got more clarity on how LLMs only deal with text and their relationships, and not really the meanings of"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 53 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "noticing how the actual token selection happens outside of LLMs, we got more clarity on how LLMs only deal with text and their relationships, and not really the meanings of the texts like humans do. 6. We also looked at how Temperature (T) can be used to control the amount of randomness in the decoding process, so that we can make the LLM more deterministic or creative depending on our use case."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 54 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 6 The Two Sides: Creativity & Hallucination “If you want to have good ideas you must have many ideas. Most of them will be wrong, and what you have to learn is which ones to throw away.” — Linus Pauling (as quoted by Francis Crick) Creativity and hallucination are two very hot topics within LLMs. Yet, in truth, they’re two sides of the same coin. In this chapter, we’ll learn about both, and also why hallucinations are sometimes inevitable and what we can do to control them. Because we’ve gone extensively through not just how LLMs work, but also how they precisely generate next tokens that lead to a variety of outputs for the same prompts, we now have"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 54 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "gone extensively through not just how LLMs work, but also how they precisely generate next tokens that lead to a variety of outputs for the same prompts, we now have all the mental models required to truly understand creativity and hallucination when it comes to LLMs. In this chapter, we’ll look at: 1. What we mean by creativity in LLMs. 2. Hallucinations and what they are. 3. How LLMs generate novel content not seen in the training data. 4. How that novel content generation explains creativity and hallucination. 5. Implications of hallucination, and what we can do to control them."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 54 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "of hallucination, and what we can do to control them."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 55 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 47 Creativity in LLMs Creativity can mean a lot of things. What’s a creative solution to one can be a 1000-year-old cliché to someone else. Thus, it’s important to discuss creativity without getting bogged down into the philosophy of it. Our focus, rather, is to make better use of LLMs for creative tasks and thus understand them in this light. The Impossibility of Absolute Uniqueness Many good solutions are often berated online for not being original. Even if a shred of that idea existed centuries before, the idea is discarded as a rehash. However, that’s a very myopic version of creativity. Imagine cranking up creativity so much that we don’t even use familiar words"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 55 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "centuries before, the idea is discarded as a rehash. However, that’s a very myopic version of creativity. Imagine cranking up creativity so much that we don’t even use familiar words from the dictionary anymore, like below: Glorptastic wibble-snorf jamboolinating through the /f_lar/f_lequake of zindle-bop reality! An example of creativity taken so far that it becomes unfamiliar gibberish. DOCUMENT #1 Would it communicate anything at all? Probably not. It’s also not very useful. Our objective here is workability; using LLMs to do creative tasks better. The objective is not to have philosophical debates around the originality of ideas. With that, we confront the fact that absolute creativity is impossible. For example, what would be the most original software? 1. One with"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 55 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "philosophical debates around the originality of ideas. With that, we confront the fact that absolute creativity is impossible. For example, what would be the most original software? 1. One with a different UI? But it would still use a programming language used by several other programs. 2. One that uses a brand new programming language? But it would still run on the same computer as every other software. 3. And we can quickly see that something that’s totally original quickly becomes disconnected from the world."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 56 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 48 We can make something very different, but it still needs to bear enough similarity with everything else to be real and usable. Novel programs need familiar user interfaces; LLMs still solve problems we’ve had for ages; AI still runs on the same hardware architecture as conventional software. Thus, when we talk about LLMs and creativity, we’re not talking about absolute unique- ness, for that can also be very useless. So what exactly are we talking about then? Situational Instead of Absolute Creativity In Chapter 2, we saw intelligence in the context of specific environments. For example, AI can act intelligently inside an email inbox in the form of a spam filter, without knowing"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 56 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 2, we saw intelligence in the context of specific environments. For example, AI can act intelligently inside an email inbox in the form of a spam filter, without knowing how to do anything else. Similar is the case for creativity as well. An idea needn’t be globally novel, but just something new brought into a specific situa- tion. Consider the following riddle (which many situations often appear to be like): I move when you move but I never decide, I grow when you grow though I live outside. I vanish at midnight, at noon I’m most small— Without me you’re solid, with me you look tall. Situations are like riddles waiting to be solved THE RIDDLE The riddle might"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 56 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "vanish at midnight, at noon I’m most small— Without me you’re solid, with me you look tall. Situations are like riddles waiting to be solved THE RIDDLE The riddle might look, well, riddling. However, imagine that we add one additional datum to this riddle in the form of a hint, as follows: I move when you move but I never decide, I grow when you grow though I live outside. I vanish at midnight, at noon I’m most small— Without me you’re solid, with me you look tall. Spotting new information can quickly resolve a riddle THE RIDDLE Hint: On a sunny day, look just behind your feet."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 56 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "information can quickly resolve a riddle THE RIDDLE Hint: On a sunny day, look just behind your feet."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 57 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 49 Immediately, we are able to see that the answer is a shadow. Shadows are not new things. And the hint of “On a sunny day, look just behind your feet” is not a particularly unique statement; it still uses common words and the usual gram- matical structure. There isn’t anything extremely original about the sentence itself. Yet, adding that statement to the situation helps resolve it easily. It’s that definition of creativity that we’re concerned with. The bringing of something new into a specific situation. Bringing in something new is the reason we brainstorm with friends; ask for ideas (however bad they might appear); anything to stir up something that can lead us"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 57 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "specific situation. Bringing in something new is the reason we brainstorm with friends; ask for ideas (however bad they might appear); anything to stir up something that can lead us to the solution. We want something that’s more than just a rehash of what we already know in that particular situation. That’s where LLMs can really help. Since LLMs are trained on vast datasets, they invariably also have patterns of texts that correspond to a vast amount of knowledge. While they don’t understand the meaning of all this knowledge, they still can present them as texts purely on a word-pattern basis. Impact of LLMs on Software Modern programs, if not using an LLM, are very literal. Imagine writing our name"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 57 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "still can present them as texts purely on a word-pattern basis. Impact of LLMs on Software Modern programs, if not using an LLM, are very literal. Imagine writing our name and address in a form as follows: The usual forms we o/f_ten see in so/f_tware and websites FIRST NAME: LAST NAME: ADDRESS: Sign up form The usual software can only do the following with it: 1. Store the data exactly. 2. Retrieve the data exactly. 3. Cross-reference the data with other stored information."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 58 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 50 4. Perform transformations and operations on the data: like making the text uppercase, etc. None of these transformations necessarily add drastically new information to the data. Notice that in doing the above, the software doesn’t add new information, opinions, or evaluations of the data, except of what it has already been programmed for. In that sense, traditional software is more literal. However, in the case of LLMs, they can take data, combine it with their “internal knowl- edge”, and thus do new things with that enriched data. Let’s look at a simple auto-tagging example below: Tags being automatically inferred from the title Article form TITLE: How the attention mechanism works. TAGS (AUTOMATIC): LLMs,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 58 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "with that enriched data. Let’s look at a simple auto-tagging example below: Tags being automatically inferred from the title Article form TITLE: How the attention mechanism works. TAGS (AUTOMATIC): LLMs, Computer Science, Model Architecture TITLE: How the attention mechanism works. The LLM is able to bring in new pertinent information which is neither explicitly entered by the user, nor explicitly programmed in the software using the LLM. Even when we use LLMs to summarize content, it still brings in external information about what’s important and what’s not, so that the summary doesn’t lose fidelity. In short, with LLMs, we can get more than what we put in, whether as inputs to software, or instructions in the form of prompts. Whenever"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 58 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "summary doesn’t lose fidelity. In short, with LLMs, we can get more than what we put in, whether as inputs to software, or instructions in the form of prompts. Whenever we prompt an LLM with anything, like writing an article, or solving a problem, its response is not a mere rehash of whatever we had given it. It actually brings into the conversation things that didn’t previously exist in that conversation. Although the content might not be globally novel, it is still locally novel to the conversation. And as we saw before, this newness can be extremely valuable. Thus, LLMs do allow a specific form of creativity when dealing with problems; which can be in the form of bringing in"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 58 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "saw before, this newness can be extremely valuable. Thus, LLMs do allow a specific form of creativity when dealing with problems; which can be in the form of bringing in pertinent information that didn’t exist within the environ- ment of the problem before."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 59 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 51 Novel Does Not Always Mean Useful One often has to come up with a lot of ideas to then find the one that really works. Thus, not all the output of an LLM need to be direct solutions. They can even be unworkable ideas that end up inspiring the real solution in some manner. Imagine having the situation described below, and an LLM that returns three possible solutions for it from the vast amount of text-patterns that it has learned. Having potentially bad ideas also helps the brainstorming process A delivery truck is stuck under a low bridge, unable to move forward or reverse. THE SITUATION 1. De/f_late the truck’s tires to lower"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 59 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "ideas also helps the brainstorming process A delivery truck is stuck under a low bridge, unable to move forward or reverse. THE SITUATION 1. De/f_late the truck’s tires to lower its height. 2. Remove the top panel of the truck to clear the bridge. 3. Use a tow truck to pull it out at a slight angle. POSSIBLE IDEAS / SOLUTIONS Not all solutions are workable. But we are able to look at it and get inspiration for Solution 1, which is deflating the truck’s tires to lower its height. The other two solutions might not be as workable. But that doesn’t matter, since having at least a few potential solutions to sift through helps the brainstorming process. Thus, the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 59 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The other two solutions might not be as workable. But that doesn’t matter, since having at least a few potential solutions to sift through helps the brainstorming process. Thus, the creative expectation from an LLM isn’t that it solve all problems absolutely. It can give ideas, sometimes bad ones, from which we can get inspiration for better ideas. Remember, the LLM doesn’t really know what it is talking about; it is merely throwing patterns at us. But that doesn’t mean the patterns are not useful. It also follows that to make the best use of LLMs in a particular subject, one has to already know that subject well enough to guide the LLM, as well as interpret its outputs. The"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 59 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "make the best use of LLMs in a particular subject, one has to already know that subject well enough to guide the LLM, as well as interpret its outputs. The LLM only deals with text; we give it meaning. And we can only give meaning to the extent of our own understanding. Thus, the idea that LLMs will do all the work without ever requiring humans is not accurate. It’s our responsibility to know which LLM outputs to keep, and which ones to throw away."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 60 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 52 For example, a beginner writer might ask the LLM to create an article and call it a day. Whereas an expert might ask the LLM to write several articles, not for their content, but in search for different potential angles that might work out. Just one right inspiration can help that expert craft the perfect essay. In short, LLMs are really good for “throw some ideas at me” kind of work when it comes to creativity. Now that we understand how LLMs work, and what they can and cannot do, their role in creative activities become much more clearer. LLMs then become just another tool to be wielded properly."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 60 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and what they can and cannot do, their role in creative activities become much more clearer. LLMs then become just another tool to be wielded properly."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 61 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 53 What are Hallucinations? To understand hallucinations, let’s look at certain use-cases for LLMs that lean toward dealing with facts rather than creativity. We’ll pick one such use case to understand hallu- cination better: information retrieval. Search engines solve the information retrieval problem. Basically, there are lots of things out there, and you want to quickly find something particular in them. In this section: 1. We’ll first understand information retrieval as a problem statement, and the search engine’s role in it. 2. How LLMs differ from search engines for this task, and what additional capabilities they possess. 3. How hallucination looks in this information retrieval task, which easily generalizes to other tasks of a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 61 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "differ from search engines for this task, and what additional capabilities they possess. 3. How hallucination looks in this information retrieval task, which easily generalizes to other tasks of a factual nature. The Problem Statement of Information Retrieval With information retrieval, instead of coming up with new information, the system has to return what’s already out there. Imagine wanting to find out if a particular street would be crowded tomorrow, like follows: Crawford street crowd patterns Crawford street is usually crowded whenever there are events scheduled, and... Event tomorrow at Crawford street The highly anticipated event is tomorrow at Crawford street, and all the preparations... Search engines can only retrieve what’s already written SEARCH: Crawford street crowd Results You’ll get"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 61 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Crawford street The highly anticipated event is tomorrow at Crawford street, and all the preparations... Search engines can only retrieve what’s already written SEARCH: Crawford street crowd Results You’ll get search results, usually from news websites, on what’s expected for tomorrow. The search engine is not forming any conclusions of its own, but merely relaying what others have written."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 62 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 54 Note that to really know if the street would be crowded tomorrow: 1. You learn from the first search result that Crawford street is usually crowded if there’s a major event happening. 2. You learn from the second result that tomorrow there is a major event over there. 3. And from this, you conclude that the street will be crowded tomorrow. Not every conclusion is usually as simple and two-toned as the above, but the basic struc- ture is similar. But it’s we who have to do the stitching of information when it comes to using a traditional search engine. LLMs in Information Retrieval What if we add LLMs to the mix? It"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 62 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "who have to do the stitching of information when it comes to using a traditional search engine. LLMs in Information Retrieval What if we add LLMs to the mix? It can actually take these isolated facts, and instead of relaying them as-is, can actually synthesize a conclusion from them, as follows: Crawford street crowd patterns Crawford street is usually crowded whenever there are events scheduled, and... Event tomorrow at Crawford street The highly anticipated event is tomorrow at Crawford street, and all the preparations... AI Summary: Crawford street will be crowded tomorrow because of a highly anticipated event. LLMs can put two and two together and direclty give you the answer SEARCH: Crawford street crowd Results The words “Crawford street"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 62 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "crowded tomorrow because of a highly anticipated event. LLMs can put two and two together and direclty give you the answer SEARCH: Crawford street crowd Results The words “Crawford street will be crowded tomorrow because of a highly anticipated event” has not been written explicitly in any webpage. But it is implied by both the search results collectively. A traditional search engine cannot return the above statement because it has not been written explicitly by any webpage. However, an LLM can synthesize it on the fly. And that’s the major benefit of the LLM’s ability to synthesize things."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 62 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "benefit of the LLM’s ability to synthesize things."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 63 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 55 This tells us that even in tasks that deal purely in facts, there is still scope for creativity in the form of “new sentences” or “new phrasings” or even “new presentations. ” Synthesis is a form of creativity. And that creativity is what separates an LLM from a traditional search engine. But with creativity also comes the possibility of hallucinations. What Hallucinations Look Like What if, for some reason, the LLM concluded erroneously that streets would be empty tomorrow? Or maybe the fact that the event tomorrow is generally not known to cause crowds? All of these are examples of hallucinations and their resultant effects. Crawford street crowd patterns Crawford street is usually"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 63 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "that the event tomorrow is generally not known to cause crowds? All of these are examples of hallucinations and their resultant effects. Crawford street crowd patterns Crawford street is usually crowded whenever there are events scheduled, and... Event tomorrow at Crawford street The highly anticipated event is tomorrow at Crawford street, and all the preparations... AI Summary: Crawford street will be empty tomorrow because of a highly anticipated event. LLMs can put two and two together and direclty give you the answer SEARCH: Crawford street crowd Results hallucination Hallucinations have to do with the facts of any problem rather than the creative aspect of it. All problems have some form of creativity, because LLMs are primarily used to synthe- size"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 63 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "to do with the facts of any problem rather than the creative aspect of it. All problems have some form of creativity, because LLMs are primarily used to synthe- size something. And all problems also have facts, because they’re based on reality and are never absolutely unique. That’s why almost all problems are affected by hallucinations. In hallucinating, the LLM creates something that really isn’t there, or isn’t true, or isn’t really a logical conclusion to the premises. But it states that new thing as if it were true, often with remarkable fluency. And this is because it’s just a text-pattern engine rather than some- thing that understands meanings. And that’s the essence of what hallucinations are and look like."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 63 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "with remarkable fluency. And this is because it’s just a text-pattern engine rather than some- thing that understands meanings. And that’s the essence of what hallucinations are and look like. Although we saw exam- ples in the context of information retrieval, the same is applicable for just about any task."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 64 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 56 Consolidating Our Understanding With that, we have a good understanding of what we mean by creativity and hallucination. Creativity is all about bringing something novel into the current situation, and not neces- sarily something that’s globally unique. And novelty doesn’t always imply usefulness. On the other hand, hallucination is the making up of facts or conclusions which are not true, but are presented as such. In the real-world, all tasks have elements of both creativity and factualness, and are hardly ever absolutely unique. Hence hallucination impacts all the tasks at least to some extent. How LLMs Generate Novel Outputs Before we move on to how and why LLMs hallucinate, we must first understand"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 64 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Hence hallucination impacts all the tasks at least to some extent. How LLMs Generate Novel Outputs Before we move on to how and why LLMs hallucinate, we must first understand how they generate novel outputs in the first place. By novel, we mean outputs that it has not liter- ally seen in the training data, like generating a new sentence not present in any texts used to train the model. In Chapter 5, we saw how LLMs choose the next tokens based on their probabilities of occurrences. The final output is one of the branches of an exponential number of possi- bilities. Choices at each token leading to exponential possibilities The quick brown red fox cat jumps. sleeps. jumps. sleeps."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 64 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "is one of the branches of an exponential number of possi- bilities. Choices at each token leading to exponential possibilities The quick brown red fox cat jumps. sleeps. jumps. sleeps. fox cat jumps. sleeps. jumps. sleeps."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 65 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 57 Imagine that amongst a lot of other things, the training data had two such texts: 1. The cat is red. 2. The fox is brown. During training, the model learns the embeddings for these tokens, of which a simple illustration is below: cat: [0.82, 1.10, -0.45, 0.33, 0.90] Tokens, their embeddings, and their similarities fox: [0.79, 1.07, -0.40, 0.36, 0.88] red: [1.25, -0.30, 0.55, -0.10, 0.72] brown: [1.20, -0.35, 0.50, -0.05, 0.75] } } similar similar The nature of the embeddings are such that the LLM knows which words are similar. For example: 1. That the words cat and fox are similar (we know that they’re both animals, but to the LLM, they’re"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 65 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "that the LLM knows which words are similar. For example: 1. That the words cat and fox are similar (we know that they’re both animals, but to the LLM, they’re just words often used similarly) 2. That the words red and brown are similar (again, we know that they’re both colors, but the LLM only sees them as patterns) Now, when we start with the word “The”, the possible branches of texts might look like: Possible text combinations with the training branches highlighted The cat is fox is red brown red brown The cat is fox is red brown red brown"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 65 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "red brown The cat is fox is red brown red brown"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 66 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 58 Notice something peculiar. In this highly simplistic case, we get four possible sentences: 1. The cat is red. (in training data) 2. The cat is brown. (new) 3. The fox is red. (new) 4. The fox is brown. (in training data) Out of the 4 possibilities, two of them have never been seen in the training data. But when the LLM creates a probability distribution over next tokens, it will consider potentially all colors wherever one color appeared in the training data; and potentially all animals where one animal appeared in the training data. Not all colors will have the same chance of occurrence, nor will all animals. But the important point is"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 66 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "potentially all animals where one animal appeared in the training data. Not all colors will have the same chance of occurrence, nor will all animals. But the important point is that they might have a non-zero chance of occurrence. And that’s exactly how LLMs are able to generate novel texts that it had not seen in the training data. A highly simplistic explanation is that LLMs look at how words are used in particular contexts, and are able to substitute other similar words. But in truth, it’s a bit more complex than that, which we’ll not get into. The important thing to note is that embeddings enable all of this. The novel text generation leads to two phenomenons: 1. The"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 66 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "complex than that, which we’ll not get into. The important thing to note is that embeddings enable all of this. The novel text generation leads to two phenomenons: 1. The LLM saying the same things in new ways. An example is saying the same fact in a different way. 2. Or saying different things all together. An example is coming up with new facts. And because of temperature, each time you prompt the LLM, you get a potentially different branch of text amongst all the possibilities. That’s the simple principle behind how LLMs generate novel text."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 66 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "behind how LLMs generate novel text."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 67 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 59 Creativity & Hallucination Now we’re ready to understand creativity and hallucination properly. Consider the four sentences from before again: 1. The cat is red. (in training data) 2. The cat is brown. (new) 3. The fox is red. (new) 4. The fox is brown. (in training data) Let’s forget about the first and the fourth, which were in the training data, and thus are neither creative nor hallucinations. However, the second and the third texts are novel. So, are they creativity or hallucination? Well, it depends on how they’re interpreted. If a person is writing a fictional story, those novel texts might look like creativity. In the story, there can now be brown"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 67 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Well, it depends on how they’re interpreted. If a person is writing a fictional story, those novel texts might look like creativity. In the story, there can now be brown and red cats, and brown and red foxes. And the writer might be happy that the LLM is mixing and matching stuff. However, if a person is retrieving information, then those two texts become hallucina- tions. If the cat is red in a situation, it should not be called brown. And neither should the cat be substituted for a fox. But stylistic changes or summarization should still be allowed. In short, creativity and hallucinations are two sides of the same coin; they’re both LLMs inventing new texts. As covered before"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 67 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "But stylistic changes or summarization should still be allowed. In short, creativity and hallucinations are two sides of the same coin; they’re both LLMs inventing new texts. As covered before in the book, LLMs don’t see meaning, but only patterns. Thus, from the perspective of the LLM, both creativity and hallucination look the same; they’re novel texts. The LLM doesn’t differentiate facts and opinions and meanings. In short, creativity and hallucination are not opposites, but to the LLM, are just two different ways of looking at the same thing. How Do We Control Hallucinations? Unfortunately, since creativity and hallucinations are so intertwined, this question does not have a simple, 100% guaranteed answer. The solutions usually form in three buckets: 1."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 67 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Do We Control Hallucinations? Unfortunately, since creativity and hallucinations are so intertwined, this question does not have a simple, 100% guaranteed answer. The solutions usually form in three buckets: 1. Training the LLM better to somehow avoid token patterns that are charac- teristic of hallucinations in specific use cases."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 68 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 60 2. Prompting the LLM in a manner that reduces hallucinations, by again molding token patterns. 3. Adding checks and balances post the content generation. The first point is up to the companies building foundation models. They use various tech- niques to train better models, such that they hallucinate less while still being creative. There are no simple answers here. The second point is about prompting the LLM to generate tokens that correspond to facts, while lowering the probability of hallucinatory tokens. One example is to ask the LLM to cite sources, which can often mold the token distribution in our favor. But that’s still not a guarantee. Making LLMs cite sources can mold"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 68 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "is to ask the LLM to cite sources, which can often mold the token distribution in our favor. But that’s still not a guarantee. Making LLMs cite sources can mold token probabiliities toward less hallucination, but it’s not a guarantee. “Explain how solar panels generate electricity, and cite your sources so the information is veri/f_iable. ” PROMPT: LLM RESPONSE: Solar panels convert sunlight into electricity through the photovoltaic eﬀect, where photons free electrons in silicon-based cells, creating an electric current. Sources: • U.S. Department of Energy – Solar Energy Technologies Oﬃce • National Renewable Energy Laboratory (NREL) – PV Basics The third point talks about taking any answer given by an LLM, and run that answer through the LLM again"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 68 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Oﬃce • National Renewable Energy Laboratory (NREL) – PV Basics The third point talks about taking any answer given by an LLM, and run that answer through the LLM again to check its validity. Again, this is not a perfect method, but can lower the possibility of hallucinations in specific use cases."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 69 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "The Two Sides: Creativity & Hallucination 61 An additional prompt to make sure that the previous output was valid “Explain how solar panels generate electricity, and cite your sources so the information is veri/f_iable. ” INITIAL PROMPT: RESPONSE #1: Solar panels convert sunlight into electricity through the photovoltaic eﬀect, where photons free electrons in silicon-based cells, creating an electric current. Sources: • U.S. Department of Energy – Solar Energy Technologies Oﬃce • National Renewable Energy Laboratory (NREL) – PV Basics RESPONSE #2: Both DOE and NREL con/f_irm the photovoltaic eﬀect as the core mechanism. No contra- dictions found; the explanation matches the referenced material. “Cross-check your previous answer against the cited sources. Con/f_irm only what is directly supported, and correct"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 69 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "as the core mechanism. No contra- dictions found; the explanation matches the referenced material. “Cross-check your previous answer against the cited sources. Con/f_irm only what is directly supported, and correct anything that isn’t. ” VERIFICATION PROMPT: In many important tasks, we might do both of the above, and probably even more. But every remediation usually falls in the above two categories. Summary 1. In the context of LLMs, creativity is getting new ideas and insights into a particular situation, rather than aiming for global uniqueness. 2. Hallucination is generation of novel texts that are factually incorrect. 3. To the LLM, both creativity and hallucinations are just generation of novel texts, and it doesn’t differentiate between the two because LLMs don’t"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 69 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "novel texts that are factually incorrect. 3. To the LLM, both creativity and hallucinations are just generation of novel texts, and it doesn’t differentiate between the two because LLMs don’t see meaning, but only context. 4. The way to make LLMs hallucinate less on factual use-cases is to make non-factual tokens less probable to generate, usually by asking the LLM to cite sources. We can also verify responses using LLMs to add more checks and balances, but this is again not perfect."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 70 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Chapter 7 How Reasoning Works in LLMs “We may represent our unsolved problem as open space between the data and the unknown, as a gap across which we have to construct a bridge.” — George Pólya in How to Solve It Reasoning is the LLM arriving at a solution via different logical steps, rather than merely remembering it or rephrasing what’s already known. There are now LLM-based models that support reasoning, wherein the model first thinks before it answers. Yet, even while doing this, the LLM is still working on the principle of patterns like we talked about before, rather than the meaning of things. In this chapter: 1. We’ll understand what reasoning is and how it looks. 2. How"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 70 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the principle of patterns like we talked about before, rather than the meaning of things. In this chapter: 1. We’ll understand what reasoning is and how it looks. 2. How it works, and why it is necessary. 3. How training works for them. What Reasoning Looks Like Let’s see what the user-experience of reasoning looks like, and then what’s going on underneath with the LLM when it reasons. The Thinking Process When using LLMs, you often see that the model is “thinking” before it responds, which might look like:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 71 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 63 LLMs can think before they start responding... PROMPT: Write a short, scary ending to a story where someone hears slow footsteps approaching their bedroom door at 3 a.m. Thinking... LLM Response PROMPT: Write a short, scary ending to a story where someone hears slow footsteps approaching their bedroom door at 3 a.m. You just see the words “thinking” or some other status updates that tell you which aspect the LLM is currently thinking about. This process can last for a few seconds to a few minutes, but then the LLM finally finishes the thinking process and outputs the answer: LLMs can think before they start responding... PROMPT: Write a short, scary ending to a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 71 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "few minutes, but then the LLM finally finishes the thinking process and outputs the answer: LLMs can think before they start responding... PROMPT: Write a short, scary ending to a story where someone hears slow footsteps approaching their bedroom door at 3 a.m. Thought for 11 seconds. LLM Response The footsteps stop right outside. The doorknob begins to turn—slowly, as though whatever is on the other side is smiling. Then my alarm clock /f_lips to 3:00 a.m. again… for the third time tonight. ANSWER: Note how you’re told for how long the LLM did the “thinking” for. In the above illustration, it’s 11 seconds. That’s how reasoning looks from the perspective of the end-user. Most of the time, the contents"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 71 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "long the LLM did the “thinking” for. In the above illustration, it’s 11 seconds. That’s how reasoning looks from the perspective of the end-user. Most of the time, the contents of that reasoning are not visible by default, only the final answer is."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 72 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 64 Inside Reasoning We are able to access the contents of reasoning in many mainstream models. When you click on the “Thought for 11 seconds” or some such similar text, it opens up the whole reasoning chain of the LLM. The contents of reasoning might look something as follows: LLMs can think before they start responding... PROMPT: Write a short, scary ending to a story where someone hears slow footsteps approaching their bedroom door at 3 a.m. Thought for 11 seconds. LLM Response The footsteps stop right outside. The doorknob begins to turn—slowly, as though whatever is on the other side is smiling. Then my alarm clock /f_lips to 3:00 a.m. again… for the third"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 72 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "stop right outside. The doorknob begins to turn—slowly, as though whatever is on the other side is smiling. Then my alarm clock /f_lips to 3:00 a.m. again… for the third time tonight. ANSWER: Goal: short + genuinely scary, not cheesy Core fear: helplessness + inevitability Best scares come from restraint—imply, don’t show everything End on a twist or irreversible moment Keep it under 40 words for punch REASONING Note how the reasoning bit is also some text. It appears as if the LLM was talking to itself. The reasoning text could either be elaborations, or other pertinent data that is required to properly answer the question. However, do note that the process of reasoning is still the LLM generating text"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 72 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "could either be elaborations, or other pertinent data that is required to properly answer the question. However, do note that the process of reasoning is still the LLM generating text like we’ve discussed in the previous chapters. It’s just that this generated text has a different role from that of the answer. How Reasoning Works & Why is it Necessary Now that we know reasoning is just the LLM’s self-talk, let’s understand how it really works and why it’s needed. Logic & Reasoning in General First, we’ll start with the concepts of logic and reasoning in general, rather than from an LLM’s perspective. Let’s look at reasoning from the lens of essays. They usually have a main argument, then evidence"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 72 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "concepts of logic and reasoning in general, rather than from an LLM’s perspective. Let’s look at reasoning from the lens of essays. They usually have a main argument, then evidence or premises, and finally a conclusion that ties back to the main argument. It might look like:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 73 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 65 Illustration of a simplistic essay that arrives at a conclusion via reasoning Why Collaboration Matters Collaboration is an essential aspect of eﬀective work because it combines diverse ideas, distributes responsibilities, and leads to stronger outcomes than solitary eﬀort. Collaboration brings together diﬀerent perspectives. When people contribute unique insights, groups can solve problems more creatively and avoid narrow thinking. Collaboration improves eﬃciency. Shared tasks reduce individual workload, allow members to focus on their strengths, and help projects progress more smoothly. In conclusion, collaboration matters because it enhances creativity and eﬃciency, making group eﬀorts more productive than working alone. ESSAY Topic Premise Premise Conclusion Reasoning allows us to take facts that we already know, and rules"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 73 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "it enhances creativity and eﬃciency, making group eﬀorts more productive than working alone. ESSAY Topic Premise Premise Conclusion Reasoning allows us to take facts that we already know, and rules for combining them (of which logic is one such thing), and then come up with new facts. We might call those derived facts either implications or conclusions or anything else to that effect. But the core idea is of deriving new things to know. The question then becomes, can LLMs derive new facts from existing facts? Logic & Reasoning in LLMs LLMs can derive new facts from existing facts. We saw an example of this in the previous chapter, in the form of an LLM synthesizing an answer from existing"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 73 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "LLMs LLMs can derive new facts from existing facts. We saw an example of this in the previous chapter, in the form of an LLM synthesizing an answer from existing facts in the search results:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 74 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 66 Crawford street crowd patterns Crawford street is usually crowded whenever there are events scheduled, and... Event tomorrow at Crawford street The highly anticipated event is tomorrow at Crawford street, and all the preparations... AI Summary: Crawford street will be crowded tomorrow because of a highly anticipated event. LLMs can put two and two together and direclty give you the answer SEARCH: Crawford street crowd Results Thus, the challenge with LLMs is not having them generate new things. That they are able to do very well if given all the necessary context (like the search results being passed as context to the LLM above). Rather, the real challenge is in getting the LLMs to arrive"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 74 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "well if given all the necessary context (like the search results being passed as context to the LLM above). Rather, the real challenge is in getting the LLMs to arrive at the same conclusion without being explicitly given much context. The LLMs Generating Their Own Context In the case of search engines, some other system fed a list of results to the LLM, and asked it to draw conclusions from it. That’s a lot like giving the LLM the following text and asking it to generate a conclusion: Why is ice cream one of the world’s most beloved desserts? It’s made from a simple blend of milk, cream, and sugar. Its churning process creates a smooth, airy texture people enjoy."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 74 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "ice cream one of the world’s most beloved desserts? It’s made from a simple blend of milk, cream, and sugar. Its churning process creates a smooth, airy texture people enjoy. Its many /f_lavors and styles allow it to suit diﬀerent tastes and cultures. A simple paragraph that demonstrates a chain of reasoning, but without the conclusion. CHAIN OF REASONING"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 75 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 67 The LLM might add a conclusion as follows: Why is ice cream one of the world’s most beloved desserts? It’s made from a simple blend of milk, cream, and sugar. Its churning process creates a smooth, airy texture people enjoy. Its many /f_lavors and styles allow it to suit diﬀerent tastes and cultures. Therefore, ice cream is beloved because its basic ingredients and variety make it universally appealing. LLM adds the conclusion based on the prior question and premises. CHAIN OF REASONING But what if we merely typed “Why is ice cream one of the world’s most beloved desserts?” and gave no other context to the LLM? Something like this: Why is ice cream"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 75 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "if we merely typed “Why is ice cream one of the world’s most beloved desserts?” and gave no other context to the LLM? Something like this: Why is ice cream one of the world’s most beloved desserts? Just giving a question to the LLM ASKING LLM A QUESTION And let’s also assume that in this particular case, the LLM did not see any training docu- ment in which the question’s been answered already. Thus, asking it to directly answer the question could result in a conclusion that’s coherent but irrational. Thus, the LLM must first generate the missing context, which it would have seen during training anyhow. It’s a lot like a detective assembling all known facts before drawing a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 75 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Thus, the LLM must first generate the missing context, which it would have seen during training anyhow. It’s a lot like a detective assembling all known facts before drawing a conclusion. So the LLM first generates this context:"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 76 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 68 Why is ice cream one of the world’s most beloved desserts? It’s made from a simple blend of milk, cream, and sugar. Its churning process creates a smooth, airy texture people enjoy. Its many /f_lavors and styles allow it to suit diﬀerent tastes and cultures. LLM /f_irst generates all pertinent information (premises) LLM REASONING Once it has this context, it can use all the patterns that it has learned about drawing logical conclusions, and thus write the answer (in red below). The context that was gener- ated before the answer is the reasoning or thinking step (in bold below). Why is ice cream one of the world’s most beloved desserts? It’s made from a"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 76 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "was gener- ated before the answer is the reasoning or thinking step (in bold below). Why is ice cream one of the world’s most beloved desserts? It’s made from a simple blend of milk, cream, and sugar. Its churning process creates a smooth, airy texture people enjoy. Its many /f_lavors and styles allow it to suit diﬀerent tastes and cultures. Therefore, ice cream is beloved because its basic ingredients and variety make it universally appealing. The LLM then generates the conclusion from the premises that it had previously generated. LLM CONCLUSION FROM REASONING Thus, reasoning is merely the intermediate text between the question and the answer which allows the LLM to properly answer the question with high accuracy, without missing"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 76 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "CONCLUSION FROM REASONING Thus, reasoning is merely the intermediate text between the question and the answer which allows the LLM to properly answer the question with high accuracy, without missing or hallucinating anything. Why It’s Necessary Let’s zoom in on why the reasoning step is necessary. First, we want correct outputs from the LLMs, and not just creative. In the case of facts, the conclusion must follow logically from those facts. Even in the case of creative tasks, there could be secondary or tertiary implications of the instructions given, which need to be followed exactly. Or else, we’ll find LLMs just “jumping to conclusions. ”"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 76 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "need to be followed exactly. Or else, we’ll find LLMs just “jumping to conclusions. ”"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 77 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 69 Second, LLMs need to be able to come to new conclusions which are not spelled out in the training data. For example, the LLM would have seen texts connecting a country and its capital in the training data. However, it might not have seen obscure things “why a pianist should learn Python programming, ” and if asked, the LLM needs to arrive at a conclusion through logical steps. Those logical steps include pertinent facts about the piano and Python, which the LLM would first generate, followed by connecting those facts in a way to answer the question. Third, when LLMs output tokens, they rely on both the knowledge encoded in the neural network itself,"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 77 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "generate, followed by connecting those facts in a way to answer the question. Third, when LLMs output tokens, they rely on both the knowledge encoded in the neural network itself, and previous tokens already generated. Thus, whatever is not directly seen before needs to be given as a context. And reasoning is a way for the LLM to give itself that context. Patterns of language not only allow LLMs to write novel sentences, but also write them in a manner that we can interpret is novel but valid conclusions. The LLM is still operating on patterns. This creation of dynamic context on the fly is called reasoning, and we say that the LLM is thinking. But the words reasoning and"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 77 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "LLM is still operating on patterns. This creation of dynamic context on the fly is called reasoning, and we say that the LLM is thinking. But the words reasoning and thinking are used very analogically rather than to mean that they’re doing exactly what humans do."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 78 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 70 A Brief Look at Training The core concepts of training still remain as before. The only difference being, instead of having a question and answer while fine-tuning, we have a question and an answer that’s divided into reasoning and final answer texts. USER PROMPT: Why is the sky blue? ASSISTANT: <reasoning> * Sunlight looks white but is made of all colors of the rainbow. * Air molecules (mostly nitrogen and oxygen) are very small — about 1/1000 the wavelength of visible light. * When light hits these tiny molecules, shorter wavelengths (blue/violet) scatter much more than longer ones (red/orange) — this is called Rayleigh scattering. * Our eyes are more sensitive to blue than"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 78 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "light hits these tiny molecules, shorter wavelengths (blue/violet) scatter much more than longer ones (red/orange) — this is called Rayleigh scattering. * Our eyes are more sensitive to blue than violet, and some violet light is absorbed in the upper atmosphere. * Scattered blue light reaches us from all directions in the sky. </reasoning> </f_inal_answer> The sky appears blue because air molecules scatter short-wavelength blue light from the Sun in all directions much more strongly than other colors (Rayleigh scattering). <//f_inal_answer> A sample training data which includes both the reasoning and the /f_inal answer sections. The reasoning sections are usually hidden by default when we use LLMs This is curated specially to teach LLMs to follow certain patterns of reasoning"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 78 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "and the /f_inal answer sections. The reasoning sections are usually hidden by default when we use LLMs This is curated specially to teach LLMs to follow certain patterns of reasoning when addressing questions. This allows LLMs to synthesize complex new facts from previous ones. Those new facts can be the answer the user’s expecting. Or those new facts can be used to help do something creative: like finding the implications of wanting a “luxury feel” before beginning to make the design."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 79 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How Reasoning Works in LLMs 71 Summary 1. Reasoning is the intermediate text generated by the LLM before it gener- ates the answer. This allows the LLM to synthesize new logical facts. 2. Reasoning is akin to the LLM itself generating context rather than being explicitly provided. 3. During training, the LLMs are provided with this additional reasoning data on specialized reasoning datasets. 4. Despite all of the above, reasoning is still achieved using text generation patterns rather than anything else."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 80 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "Conclusion That was a wild ride into the worlds of AI, LLMs, and reasoning. In a very concise fashion, we covered: 1. The basic terminology used in the industry today, what they really mean, and how disagreements around their definitions lead to debates online. 2. The predict-the-next-token principle on which LLMs work. How that simple principle can be leveraged to set up different types of tasks for the LLMs to do. We also explored the differences between tokens and words. 3. How LLMs are trained and fine-tuned / instruction-tuned. What the training data looks like. And how vast amounts of existing content is used to teach common patterns to the LLM. 4. How the final responses are decoded from the"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 80 :: 90",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "the training data looks like. And how vast amounts of existing content is used to teach common patterns to the LLM. 4. How the final responses are decoded from the LLM’s prediction of the token probabilities. And how this process leads to different responses each time. Also, we understood how temperature allows us to control this random- ness. Decoding is also the key to how LLMs are able to generate novel text. 5. What creativity and hallucination are. How they are two sides of the same coin, because they both originate from the LLM’s capability for generating novel texts. Also, strategies for reducing hallucinations. 6. How reasoning works in LLMs, and the purpose for having it in the first place."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 80 :: 180",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "originate from the LLM’s capability for generating novel texts. Also, strategies for reducing hallucinations. 6. How reasoning works in LLMs, and the purpose for having it in the first place. Also, how reasoning is still text generation; it’s just that LLMs first generate the context before they generate the answer. By understanding these basics, we are able to draw our own conclusions about the different issues that surround AI, and also make better use of LLMs in our day-to-day life. This increased understanding also helps us define our roles in this AI world, and allows us to continue generating value rather than being fearful of AI. The key to having control over anything is to first understand it. And that’s"
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 80 :: 270",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "this AI world, and allows us to continue generating value rather than being fearful of AI. The key to having control over anything is to first understand it. And that’s the step that we’ve taken."
+  },
+  {
+    "chunk_id": "How AI Thinks - LLMs Demystified.pdf :: 81 :: 0",
+    "source": "How AI Thinks - LLMs Demystified.pdf",
+    "text": "How AI Thinks A plain-language, first-principles guide for anyone who wants to understand how AI learns, reasons, and creates. © 2026 Raahul Seshadri. All rights reserved. Connect with me: LinkedIn For more information, visit HowAIThinks.dev."
+  }
+]

@@ -30,6 +30,12 @@ class ModelGateway:
 
         if output_validator is not None:
             self.model.output_validator(output_validator)
+        
+        @self.model.tool
+        def check_attempts(ctx: RunContext[None]) -> str:
+            current_attempt = ctx.retry  # Integer showing current retry number
+            max_allowed = ctx.max_retries  # Total retry budget allocated
+            return f"This is retry step {current_attempt} out of {max_allowed}."    
 
     def run(self, input_text: str, retries: int = 1) -> Any:
         result = self.model.run_sync(input_text, retries=retries)
