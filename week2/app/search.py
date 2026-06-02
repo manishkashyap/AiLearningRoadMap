@@ -1,8 +1,11 @@
 import json
 from pathlib import Path
-from embedder import embed_texts, cosine_similarity
-import numpy
 import argparse
+
+import faiss
+import numpy
+
+from embedder import embed_texts
 
 DATA_DIR = Path("/Users/manish/gitspace/AIRoadmap/week2/data")
 CHUNKS_FILE = DATA_DIR / "chunks.json"
@@ -10,18 +13,21 @@ EMBEDDINGS_FILE = DATA_DIR / "embeddings.npy"
 METADATA_FILE = DATA_DIR / "metadata.json"
 
 def search(query: str, top_k: int = 3, min_score: float = 0.25) -> list[dict]:
-    embeddings = numpy.load(EMBEDDINGS_FILE)
+    embeddings = numpy.load(EMBEDDINGS_FILE).astype("float32")
     metadata = json.loads(METADATA_FILE.read_text(encoding="utf-8"))
+
+    index = faiss.IndexFlatIP(embeddings.shape[1])
+    index.add(embeddings)
+
     print(f"\nQuery: {query}\n")
-    query_embedding = embed_texts([query])[0]
-    scores = embeddings @ query_embedding
-    ranked_indices = numpy.argsort(scores)[::-1]
-    print(ranked_indices)
+    query_embedding = embed_texts([query]).astype("float32")
+    scores, ranked_indices = index.search(query_embedding, k=top_k)
+
     chunks = []
     seen_sources = set()
 
-    for idx in ranked_indices:
-        score = float(scores[idx])
+    for score, idx in zip(scores[0], ranked_indices[0]):
+        score = float(score)
 
         if score < min_score:
             continue
