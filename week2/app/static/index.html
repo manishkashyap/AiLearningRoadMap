@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebEngage Knowledge Search</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">WebEngage knowledge index</p>
+      <h1>Support Search</h1>
+    </div>
+    <div class="status" id="service-status">
+      <span class="status-dot"></span>
+      <span>Checking service</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="query-panel">
+      <form id="search-form">
+        <label for="query">Question</label>
+        <div class="query-row">
+          <textarea id="query" name="query" rows="2" required
+            placeholder="Ask a WebEngage product question"></textarea>
+          <button type="submit" id="search-button">Search</button>
+        </div>
+
+        <div class="controls">
+          <label>
+            Results
+            <input id="top-k" type="number" min="1" max="20" value="5">
+          </label>
+          <label>
+            Answer context
+            <input id="answer-top-k" type="number" min="1" max="10" value="3">
+          </label>
+          <label>
+            Candidates/category
+            <input id="candidate-count" type="number" min="1" max="100" value="15">
+          </label>
+          <label class="toggle">
+            <input id="use-bm25" type="checkbox" checked>
+            <span>BM25</span>
+          </label>
+          <label class="toggle">
+            <input id="use-reranker" type="checkbox">
+            <span>Reranker</span>
+          </label>
+          <label class="toggle">
+            <input id="generate-answer" type="checkbox" checked>
+            <span>Generate answer</span>
+          </label>
+        </div>
+      </form>
+    </section>
+
+    <section id="error-panel" class="error-panel hidden" aria-live="polite"></section>
+
+    <section id="loading-panel" class="loading-panel hidden" aria-live="polite">
+      <div class="loading-line"></div>
+      <p>Searching the knowledge index...</p>
+    </section>
+
+    <section id="answer-section" class="answer-section hidden">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Generated response</p>
+          <h2 id="answer-objective">Answer</h2>
+        </div>
+        <span id="confidence" class="confidence"></span>
+      </div>
+      <div id="answer-content" class="answer-content"></div>
+      <div id="answer-sources" class="answer-sources"></div>
+    </section>
+
+    <section id="metrics-section" class="metrics-section hidden" aria-label="Query metrics">
+      <div><span>Retrieval</span><strong id="retrieval-time">0 ms</strong></div>
+      <div><span>Generation</span><strong id="generation-time">0 ms</strong></div>
+      <div><span>Input tokens</span><strong id="input-tokens">0</strong></div>
+      <div><span>Output tokens</span><strong id="output-tokens">0</strong></div>
+    </section>
+
+    <section id="results-section" class="results-section hidden">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Retrieval inspection</p>
+          <h2>Search results</h2>
+        </div>
+        <span id="result-count" class="result-count"></span>
+      </div>
+      <div id="results-list" class="results-list"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

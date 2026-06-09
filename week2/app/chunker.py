@@ -2,10 +2,10 @@ import json
 from pathlib import Path
 from pypdf import PdfReader
 
-chunk_size = 120 #words
-chunk_overlap = 30 #words
+chunk_size = 250 #words
+chunk_overlap = 40 #words
 
-DOCUMENTS_DIR = Path("/Users/manish/gitspace/AIRoadmap/week2/documents")
+DOCUMENTS_DIR = Path("/Users/manish/gitspace/AIRoadmap/documents")
 DATA_DIR = Path("/Users/manish/gitspace/AIRoadmap/week2/data")
 CHUNKS_FILE = DATA_DIR / "chunks.json"
 
